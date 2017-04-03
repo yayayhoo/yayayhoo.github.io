@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            /*链接 样式*/
+            a.overline{
+                text-decoration: overline;
+            }
+            a.line-through{
+                text-decoration: line-through;
+            }
+            a.blink{
+                text-decoration: blink;
+            }
+            a.overthrou{
+                text-decoration: overline line-through;
+            }
+            /*段落 空格符 换行 格式*/
+            p.pre{
+                white-space: pre;
+            }
+            p.nowrap{
+                white-space: nowrap;
+            }
+            p.pw{
+                white-space: pre-wrap;
+            }
+            p.pl{
+                white-space: pre-line;
+            }
+            /*文字方向*/
+            p.dire{
+                direction: rtl;
+            }
+
+            /*行间距*/
+            p.lineheight1{
+                line-height: 80%;
+                /*粗体*/
+                font-weight: bold;
+            }
+            p.lineheight2{
+                line-height: 200%;
+                /*小型的大写*/
+                font-variant: small-caps;
+            }
+            /*zonghe*/
+            p.ex{
+                font:italic bold 30px arial , sans-serif;
+            }
+
+            a:link, a:visited{
+                display: block;
+                font-weight: bold;
+                font-size: 14px;
+                width: 120px;
+                padding: 4px;
+                text-decoration: none;
+                text-align: center;
+                color: red;
+                background-color: pink;
+
+            }
+            li{
+                list-style: url(1.png)  square inside;
+            }
+            li.outside{
+                list-style-position: outside;
+            }
+
+            
+            table, tr{
+                border: 1px blue solid;
+            
+            }
+            table{
+                border-collapse: 1;
+                /*边框距离*/
+                border-spacing: 3px;
+            }
+            th, td{
+                width: 50px;
+                height: 30px;
+                text-align: center;
+                padding:0;
+            }
+            th{
+                background-color: #B0E0E6;
+            }
+            td{
+                background-color: #FCE6C9;
+            }
+
+            table.layout{
+                table-layout: fixed;
+            }
+            /*空数据效果*/
+            td.empty{
+                empty-cells: hide;
+            }
+            caption{
+                /*默认是top 还可以inherent*/
+                caption-side:bottom;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <a class="overlline" href="#">overline</a> <br />
+        <a class="line-through" href="#">line-through</a><br />
+        <a class="blink" href="#">blink</a><br />
+        <a class="overthrou" href="#">overthrough</a><br />
+        <hr />
+
+        <p class="pre">This     paragraph has    many
+        spaces           in it.按照代码格式</p>
+        <p class="pw">This     paragraph has    many
+        spaces           in it.保留空白符换行符，还可以自动换行</p>
+        <p class="pl">This     paragraph has    many
+        spaces           in it.保留换行符 自动换行 合并空白符</p>
+        <p class="nowarp">This     paragraph has    many
+        spaces           in it.</p>
+        <p>This     paragraph has    many
+        spaces           in it.默认的无换行，空格合一</p>
+        <p class="dire">This     paragraph has    many        
+        spaces        dasf   in it. it is ok?</p>
+        <p class="lineheight1 pre">This     paragraph has  asd  many  fd      
+        spaces     fdsf   dasf   in it. it is ok?  line-height 80%</p>
+        <p class="lineheight2 pre">This     paragraph has  asd  many  fd      
+        spaces     fdsf   dasf   in it. it is ok? 200%</p>
+
+        <p class="ex">This     paragraph has  asd  many  fd      
+        spaces     fdsf   dasf   in it. it is ok? 200%</p>
+
+        <a href="#">link</a>
+
+        <ul>
+            <li>1inside</li>
+            <li>2</li>
+            <li>3</li>
+            <li class="outside">4outside</li>
+
+        </ul>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+
+        <table>
+            <caption>caption</caption>
+            <th width="29%">numberfsdfdsfdsfds</th>
+            <th>2</th>
+            <th>3</th>
+
+            <tr>
+                <td>1</td>
+                <td>12</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>22</td>
+                <td>23</td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td class="empty"></td>
+                <td>313</td>
+            </tr>
+            
+        </table>
+
+
+        <table class="layout" border="1" width="100%">
+        <tr>
+        <td width="20%">1000000000000000000000000000</td>
+        <td width="40%">10000000</td>
+        <td width="40%">100</td>
+        </tr>
+        </table>
+        <p>这个实际效果没有表现出fixed的效果</p>
+    </body>
+</html>
