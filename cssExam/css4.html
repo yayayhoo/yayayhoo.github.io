@@ -1,0 +1,290 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html> 
+    <head>
+        <title>Navi </title>
+         <style type="text/css" media="screen">
+        body {
+            /*选择图片时 url*/
+            background-image: url('1.png');
+            /*水平 垂直 方式排列*/
+            background-repeat: repeat-x;
+            /*受 repeat x y 影响， 四个选一*/
+            background-position: bottom top left right;
+            
+            /*字体组 生效优先级递减; 有空格不需要加引号*/
+            font-family: "Times New Roman", Times, serif, 'New York';
+            /*1em = 16px*/
+            font-size: 16px;
+            font-size: 1em;
+            
+        }
+ 
+        /*link 依次是 代表 正常、已访问、鼠标放在、被点击*/
+        a.link{color:#ff0000;}
+        a.visited{color: #ff0000;}
+        a.hover{color: #ff0000;}
+        a.active{color: #ff0000;}
+
+        /*列表 */
+        ul{
+            list-style-image: url('1.png');
+        }
+
+        /*表格*/
+        /*防止下面的solid 叠加*/
+        table{
+            border-collapse: collapse;
+            width: 100%;
+        }
+        /*边界显示 宽度 样式 颜色*/
+        table, th, td{
+            border: 1px solid black;
+            text-align: center;
+        }
+
+        th{
+            height: 50%;
+            font-size: 40px;
+            background-color: green;
+        }
+        tr.odd{
+            background-color: #ff0000;
+        }
+        td{
+            padding: 5px;
+        }
+
+        /*box model little exemple*/
+        div.exemp{
+            width: 220px;
+            padding: 10px;
+            border: 5px solid green;
+            margin: 0px;
+        }
+        /*边框样式*/
+        p.none {border-style:none;}
+        p.dotted {border-style:dotted;}
+        p.dashed {border-style:dashed;}
+        p.solid {border-style:solid;}
+        p.double {border-style:double;}
+        p.groove {border-style:groove;}
+        p.ridge {border-style:ridge;}
+        p.inset {border-style:inset;}
+        p.outset {border-style:outset;}
+        p.hidden {border-style:hidden;}
+        
+        /*左边框设置宽度*/
+        p.left{
+            border-style: solid;
+            border-left-width: 14px;
+        }
+        /*下边框*/
+        p.down{
+            border-style: solid;
+            border-bottom-style: dotted ;
+            border-bottom-color: yellow;
+        }
+        /*set outline 样式同边框*/
+        p.outline{
+            border: medium solid red;
+            outline: green dotted 10px;
+        }
+        /*padding*/
+        p.padding{
+            background-color: yellow;
+
+            padding: 25px 50px 25px 50px;
+            
+        }
+
+        /*组合定义 合并*/
+
+        h1, h5{
+            color: blue;
+            font-size: 30px;
+        }
+        
+/*        html{color: red;}
+*/
+        /*把所有包含title 的元素都变成红色*/
+/*        *[id] {color: red;}
+*/        /*p 中包含 id 的元素都变成红色*/
+        p[id] {color: red;}
+
+        /*特定属性选择器*/
+        *[lang|='en'] {color: green;}
+        /*子串匹配属性*/
+        *[lang$='en'] {color: blue;}
+
+        /*兄弟选择器*/
+        li + li {font-weight: bold;}
+
+        /*输入框对focus设置背景色*/
+        input: focus{
+            background-color: yellow;
+        }
+        
+        /*pseudo class */
+        p:first-child{color: blue;}
+        q:lang(no){
+            quotes: '-$%-' '-^%-';
+        }
+        p > i:first-child {
+          font-weight:bold;
+          } 
+        #navigationBar{
+
+        }
+
+        #navigationBar ul{
+
+        }
+
+        #navigationBar ul > li{
+
+        }
+
+        #navigationBar li > a{
+
+        }
+
+        #navigationBar ul ul{
+
+        }
+
+        #navigationBar ul ul li{
+
+        }
+
+        #navigationBar ul ul li > a{
+
+        }
+
+        #navigationBar li; hover > a{
+
+        }
+
+        #navigaionBar li: hver > ul{
+
+        }
+    </style>
+
+    </head>   
+
+    <body>
+        <!-- first-child 这里好像不怎么管用-->
+        <br />
+        <br />
+        <br />
+        <p>these are :push fff
+        </p>
+        <p>these are :<q lang='no'>
+            push </q>fff
+        </p>
+        <p>some <i>text</i>. some <i>text</i>.</p>
+
+        
+
+        <h1> A Typical Web Site</h1>
+        <nav id="navigationBar">
+            <ul>
+                    <li><a href="#" title="">section 1</a></li>
+                    <li><a href="" title="">sectioon 2</a></li>
+                    <li><a href="" title="">section 3</a></li>
+                    <li><a href="" title="">section 3</a></li>
+                </ul>
+        </nav>
+        <h2>this is a h2</h2>
+        
+        <h2> a simple list</h2>
+
+
+        <ol>
+            <li>section link</li>
+            <li>section link</li>
+            <li>section link</li>
+            <li>section link</li>
+        
+        
+        </ol>
+        <ul>
+            <li>section</li>
+            <li>section</li>
+            <li>section</li>
+        </ul>
+
+        <table>
+            <th>you</th>
+            <th>guess</th>
+            <th>what</th>
+            <tr class="odd">
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+           </tr>
+          <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+          </tr>
+         <tr class="odd">
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+           </tr>
+        </table>
+
+        <!-- little exemple -->
+        <img src="1.jpg" height="250" width="250" alt="" />
+        <div class="exemp"> <p>the picture above is 250px, the total width of the div is 250px too.</p></div>
+
+
+
+        <p class="left">the left border is 14px</p>
+        <p class="down">the down border is 14px</p>
+        <p class="outline">the outline border is 14px</p>
+        <p class="padding">the padding border is 14px</p>
+        
+        
+         <h1>111fdadf</h1>
+         <h2 id='hello'>fasdfj43</h2>
+       <!--  <h3>fasdfj43</h3> -->
+         <p>fasdfj43</p>
+        
+        <p id='hello'>baby come on</p>
+        
+        <!-- 特定属性选择器 -->
+        <p lang='en-u'>en-u</p>
+        <p lang='en-us'>en-us</p>
+        <p lang='en-ua'>en-ua</p>
+        <p lang='fr'>fr</p>
+        <p lang='cn'>cn</p>
+        <p lang='cy-en'>cy-en</p>
+
+        <!-- 子串匹配属性选择器 -->
+        <p lang='en-u'>en-u</p>
+        <p lang='en-us'>en-us</p>
+        <p lang='en-ua'>en-ua</p>
+        <p lang='fr'>fr</p>
+        <p lang='cn'>cn</p>
+        <p lang='cy-en'>cy-en</p>
+        
+        <!-- focus -->
+        <form action="form_action.asp" method='get'>
+            firstname: <input type="text" name='fname'/><br />
+            lastname: <input type="text" name='lname' /> <br />
+            <button type='submit' name='submit'>submit</button>
+            <input type="submit" value='submit' />
+        </form>
+        
+        <hr />
+        
+    </body>
+
+
+
+
+
+   
+
+</html>
