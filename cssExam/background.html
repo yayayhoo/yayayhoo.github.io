@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <style>
+        /*字体高亮*/
+            span.highlight{
+                background-color: yellow;
+            }
+            /*背景图片*/
+            body{
+                background-image: url(2.png);
+                /*background-repeat: repeat-x repeat-y no-repeat; */
+                /*图片居中显示一次*/
+                    /*图片固定 只用这两行代码*/
+                    background-repeat: no-repeat;
+                     background-attachment: fixed;
+                /*background-position: center;*/
+                /*定位显示*/
+                /*background-position: 30% 20%;*/
+                /*background-position: 50px 100px;*/
+            
+            
+
+            }
+
+            p.flower{
+                background-image: url(2.png);
+                padding: 10px;
+            }
+            a.radio{
+                background-image: url(1.png);
+                padding: 10px;
+            }
+            /*缩进 中文两个字符 indent可用于块状元素，但不能是内部。 indent可以是负数*/
+            p.indent{
+                text-indent: -1cm;
+                text-indent: 20%;
+            }
+            /*indent可以继承*/
+            div#inner{text-indent: 10%;}
+
+            /*text-align 有5种植：left right center justify两端对齐文本 inherit从父元素继承*/
+
+            /*单词间距*/
+            p.spread{
+                word-spacing: 30px;
+            }
+            /*字母间隔*/
+            p.space{
+                letter-spacing: 10px;
+            }
+
+            /*大小写*/
+            h1{
+                text-transform: uppercase;
+            }
+            h2{
+                text-transform: lowercase;
+            }
+            h3{
+                text-transform: capitalize;
+            }
+        </style>
+    </head>
+    <body>
+        <h3> capitalize</h3>
+        <h2>LOWERCASE   </h2>
+        <h1> uppercase</h1>
+        <p class="spread">
+            this is a hahahahha
+        </p>
+        <p class="space">
+            this is a hahahahha
+        </p>
+        <!--继承  -->
+        <div id="inner"> <p>
+            this is a hahahahha
+        </p></div>
+
+        <p>
+            <span class='highlight' >text</span> textpriority priority priority priority priority priority priority priority priority <span class='highlight'>went </span>
+        </p>
+        
+        <p class='flower'> this is a paragragh <a href="#">a hrefdsfsdfdsfdsf</a></p>
+        <p class="indent">增有了線今之於
+像無人自呢十紀中金世來的樹太！級母在致多。增有了線今之於
+像無人自呢十紀中金世來的樹太！級母在致多。增有了線今之於
+像無人自呢十紀中金世來的樹太！級母在致多。增有了線今之於
+像無人自呢十紀中金世來的樹太！級母在致多。增有了線今之於
+像無人自呢十紀中金世來的樹太！級母在致多。 </p>
+
+        <p style='width: 20px'>增有了線今之於
+像無人自呢十紀中金世來的樹太！級母在致多。</p>
+    
+    </body>
+</html>
