@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <style>
+            /*margin*/
+            .center{
+                /*不加auto 从头开始写，加了整个div 居中*/
+                margin: auto;
+                width: 60%;
+                background-color: #BDFCC9;
+            }
+            /*position*/
+            .right{
+                position: absolute;
+                right: 230px;
+                width: 300px;
+                background-color: #b0e0e6;
+            }
+            /*float*/
+
+            img.small{
+                width: 200px;
+            }
+            img.small2{
+                width: 20%;
+            }
+            /*像素太多降低*/
+            img.mh{
+                max-height: 600px;
+                /*30%*/
+            }
+
+            /*像素若是不足便强迫拉伸*/
+            img.minh{
+                min-height: 200px;
+            }
+
+            div.none{
+                display: none;
+            }
+
+            span.block{
+                display: block;
+            }
+            img.iright{
+                float: right;
+                margin: 0 0 15px 20px;
+                border: 1px dotted black;
+            }
+
+            span.letterBig{
+                float: left;
+                width: 0.7em;
+                font-size: 400%;
+                font-family: algerian ;
+                line-height: 80%;
+            }
+            ul{
+                width: 100%;
+                list-style-type: none;
+                float: left;
+            }
+            a.li{
+                width: 200px;
+                float: left;
+                border-right: solid 1px black;
+                text-decoration: none;
+                background-color: #40E0D0;
+                color: #FF8000;
+                text-align: center;
+            }
+
+            /*鼠标指针变*/
+            
+        </style>
+    </head>
+
+    <body>
+    <div class=''>
+            <p>这是一个段落。这是一个段落。这是一个段落。这是一个段落。这是一个段落。</p>
+            <p>这是一个段落。这是一个段落。这是一个段落。这是一个段落。这是一个段落。</p>
+        </div>
+        <div class='center'>
+            <p>这是一个段落。这是一个段落。这是一个段落。这是一个段落。这是一个段落。</p>
+            <p>这是一个段落。这是一个段落。这是一个段落。这是一个段落。这是一个段落。</p>
+        </div>
+
+        <div class='right'>
+            <p>这是一个段落。这是一个段落。这是一个段落。这是一个段落。这是一个段落。</p>
+            <p>这是一个段落。这是一个段落。这是一个段落。这是一个段落。这是一个段落。</p>
+        </div>
+        <img src="1.jpg" height="752" width="1000" alt="" />
+        <img src="1.jpg" class="small" alt="" />
+        <img src="1.jpg" class="small2" alt="" />
+        <img src="1.jpg" class="mh" height="752" width="1000" alt="" />
+        <img src="2.png" class="mh" height="140" width="222" alt="" />
+
+        <img src="1.png" class="minh" height="39" width="48" alt="" />
+        <img src="2.png" class="minh" height="140" width="222" alt="" />
+
+        <p>下面有一个div元素</p>
+        <div class="none">你们看啊这里的div元素不显示出来</div>
+
+        <span class='block'>此处span被设置为块级元素</span>
+        <span>两个span之间产生了一个换行行为</span>
+
+        <p>
+            图像浮动到右侧，添加了点状的边框， 边距 0 0 15 20
+        </p>
+
+        <img src="1.png" class="iright" height="39" width="48" alt="" />
+        <p>
+            This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+        </p>
+
+        <p>
+            <span class='letterBig'>T</span>his a tempelete This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some text.
+This is some text. This is some text. This is some t
+        </p>
+
+        <ul >
+            <li><a class="li" href="#">section</a></li>
+            <li><a  class="li" href="#">section</a></li>
+            <li><a  class="li" href="#">section</a></li>
+            <li><a  class="li" href="#">section</a></li>
+        </ul>
+
+        
+    </body>
+</html>
