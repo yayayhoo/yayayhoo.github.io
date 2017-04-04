@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            /*属性选择器*/
+            [title]{
+                color: red;
+            }
+
+            [title]{
+                border: 5px solid blue;
+            }
+            /*含hello的都设置*/
+            [title~=hello]{
+                color: red;
+            }
+            [lang|=en]{
+                color: red;
+            }
+
+            input[type='text']{
+                width: 150px;
+                display: block;
+                margin-bottom: 10px;
+                background-color: yellow;
+                font-family: Arial;
+            }
+
+            div.background{
+                opacity: 0.6;
+                width: 1000px;
+                height: 750px;
+                background-image: url(1.jpg);
+                border: 1px solid blue;
+                background-repeat: no-repeat;
+            }
+            div.text{
+                margin: 175px 200px 175px 200px;
+                width: 600px;
+                height: 400px;
+                opacity: 0.1;
+                border: 1px dotted black;
+                
+            }
+            p{
+                width: 400px;
+
+            }
+
+            @media screen{
+                p.text{
+                    font-size: 30px;
+                }
+            }
+
+            @media handheld{
+                p.text{
+                    font-size: 5px;
+                }
+            }
+        </style>
+    </head>
+        <div class="background">
+            <div class="text">
+                <p>This is some text that is placed in the transparent box. This is some text that is placed in the transparent box. This is some text that is placed in the transparent box. This is some text that is placed in the transparent box. This is some text that is placed in the transparent box.</p>                
+
+            </div>
+
+        </div>
+
+        <p class="text">it is a text paragragh</p>
+    <body>
+    </body>
+</html>

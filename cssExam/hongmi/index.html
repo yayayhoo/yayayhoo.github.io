@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+            *{
+                width: 1349;
+                margin: auto ;
+            }
+            a{
+                text-decoration: none;
+                /*color:white;*/
+
+            }
+
+            .site-topbar{
+                height: 40px;
+                font-size: 12px;
+                background-color: black;
+            }
+            .topbar-left{
+                margin-left: 70px;
+                float: left;
+            }
+            .topbar-left > a{
+                margin: 0px 5px 0px 75px;
+                float: left;
+                color: white;
+            }
+            .topbar-left a{
+                margin: 10px 5px 0px 5px;
+                float: left;
+                color: white;
+            }
+            
+
+            .topbar-left > span{
+                margin: 8px 5px 10px 5px;
+                /*color: white;*/
+                float: left;
+            }
+
+            .topbar-right{
+                width: 250px;
+                margin-right: 60px;
+                float: right;
+                color: white;
+                /*border: 2px dotted white;*/
+
+            }
+            .topbar-right a{
+                margin: 10px 5px 0px 5px;
+                float: left;
+                color: white;
+            }
+            .topbar-right > span{
+                margin: 8px 5px 10px 5px;
+                /*color: white;*/
+                float: left;
+            }
+            .topbar-shop{
+                width: 100px;
+                /*margin: 20px 5px 0px 15px;*/
+                position: absolute;
+                top: 8px ;
+                right: 60px;
+                display: block;
+                font-size: 20px;
+                background-color: gray;
+                margin: auto;
+                float: right;
+                text-align: center;
+            }
+
+
+
+
+
+
+            .site-header{
+                height: 100px;
+                
+            }
+
+            .site-header img{
+                    margin:20px 50px 0 70px;
+                    float: left;
+                }
+            .site-header a{
+                 margin: 40px 13px 0px 13px;
+                float: left;
+                color: black;
+                font-size: 16px;
+            }
+            .header-right{
+                width: 200px;
+                height: 50px;
+                float: right;
+                margin-top: 35px;
+                margin-right: 60px;
+                font-size: 18px;
+                /*border: 2px black dotted;*/
+            }
+            .header-right [type='text']{
+                margin-right: 80px;
+                height: 40px;
+                width: 138px;
+                float: left;
+            }
+            .header-right [type='submit']{
+                width: 60px;
+                position: right top;
+                height: 48px;
+                margin-top: -48px;
+                float: right;
+                margin-left: 0;
+                /*margin-right: 60px;*/
+                /*margin-bottom: 40px;*/
+            }
+
+
+            .nav-bar{
+                width: 1349px;
+                height: 63px;
+                border: 1px solid gray;
+                background-color: white;
+                position: fixed;
+                top: 0;
+                
+            }
+
+            .nav-left{
+                height: 31px;
+                margin: 15px 0 0 60px;
+                font-size: 30px;
+                float: left;
+            }
+            
+            .nav-right{
+                /*border: 2px solid black;*/
+                font-size: 16px;
+                width: 340px;
+                height: 30px;
+                float: right;
+                margin: 22px 60px 0 0;
+                font-color: black;
+            }
+            .nav-right a{
+                float: left;
+                color: black;
+            }
+            .nav-right span{
+                margin: 0 8px 0 8px;
+                /*color: white;*/
+                float: left;
+            }
+            #cellphone-pay{
+                height: 25px;
+                width: 115px;
+                float:right;
+                display: block;
+                background-color: orange;
+                color: white;
+                /*padding: 0 5px 0 5px;*/
+                margin: auto;
+
+            }
+            #cellphone-pay a{
+                position: relative;
+                left: 19px;
+                /*margin: 0 25px 0 5px;*/
+                color: white;
+
+
+            }
+
+
+
+            /*手机主体*/
+            .section{
+                margin-left: 60px;
+                margin-right: 60px;
+
+            }
+            
+            .section-intr{
+                height: 791px;
+                border-bottom: 1px solid gray;
+                border-top: 1px dotted gray;
+            }
+            .intr-left{
+                float: left;
+                /*border: 1px solid black*/
+
+            }
+            .intr-right{
+                /*margin-left: 20px;*/
+                float: right;
+                /*border: 1px solid black*/
+            }
+
+            #hongmi-pic1{
+                float: left;
+                margin: 0 0 0 60px;
+            }
+            .intr1{
+                /*border: 1px solid black;*/
+                float: left;
+                margin-top: 90px;
+                /*margin-right: 60px;*/
+                margin-left: -40px;
+            }
+            ul.intr {
+                list-style-type: none;
+                /*text-decoration: none;*/
+                float: left;
+            }
+
+            .intr1 ul li{
+                width: 160px;
+                height: 180px;
+                /*border: 1px dotted black;*/
+                float: left;
+                /*display: inline;*/
+                /*padding: 50px 10px 0 10px;*/
+            }
+            .intr1 ul li h2{
+                margin-top: 50px;
+                left: 5px;
+                right: 5px;
+            }
+
+            .intr2 ul{
+                /*list-style-type: circle;*/
+                float: left;
+                /*border: 1px solid;*/
+
+            }
+            .intr2 p{
+                margin-bottom: 40px
+            }
+            .intr2 ul th{
+                display: inline;
+                width: 80px;
+                height: 30px;
+                /*border: 1px dotted black;*/
+                float: left;
+                margin-right: 50px;
+
+            }
+            .intr2 span{
+                margin: 0 8px 0 8px;
+                /*color: white;*/
+                /*float: left;*/
+
+            }
+
+
+            h2.section{
+                margin-top: 20px;
+                margin-left: 60px;
+            }
+
+            .section-contain{
+                float: right;
+                /*border: 1px solid black;*/
+                width: 940px;
+                margin-right: 60px;
+                /*margin-top: 0px;*/
+                font-size: 20px;
+            }
+            .section-version{
+                height: 150px;
+                border-bottom: solid 1px gray;
+
+            }
+            .version-cont1{
+                float:left;
+                width: 450px;
+                /*border: 1px solid blue;*/
+            }
+            .version-cont2{
+                /*border: 1px solid blue;*/
+                float:right;
+                width: 450px;
+            }
+
+
+            .section-battery{
+                height: 165px;
+                border-bottom: solid 1px gray;
+            }
+            table.battery{
+                border-collapse: collapse;
+                border: 1px solid black;
+
+            }
+            table.battery th{
+                border: 1px solid black;
+                font-size: 18px;
+                width: 111px;
+                height: 52px;
+                text-align: center;
+            }
+            table.battery td{
+                border: 1px solid black;
+                font-size: 18px;
+                width: 111px;
+                height: 52px;
+                text-align: center;
+            }
+
+            .section-note{
+                height: 150px;
+                border-top: solid 1px black;
+                border-bottom: solid 1px black;
+                background-color: #C0C0C0;
+                color: #808A87;
+
+            }
+            .section-note p{
+                margin: 50px 5px 0 5px;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div class='site-topbar'>
+            <div class='topbar-left'>
+            <a href="#">小米商城</a>
+            <span> | </span>
+            <a href="#">MIUI</a>
+            <span>|</span>
+            <a href="#">米聊</a>
+            <span>|</span>
+            <a href="#">游戏</a>
+            <span>|</span>
+            <a href="#">多看阅读</a>
+            <span>|</span>
+            <a href="#">云服务</a>
+            <span>|</span>
+            <a href="#">金融</a>
+            <span>|</span>
+            <a href="#">小米商城移动版</a>
+            <span>|</span>
+            <a href="#">问题反馈</a>
+            <span>|</span>
+            <a href="#">Select Text</a>
+            </div>
+
+            <div class="topbar-right">
+                <a href="#">登录</a>
+                <span>|</span>
+                <a href="#">注册</a>
+                <span>|</span>
+                <a href="#" >消息通知</a>
+
+                <div class="topbar-shop">
+                    <img src="shop.jpg" height="24" width="26" alt="" />购物车
+                </div>
+                
+            </div>
+
+        </div>
+    
+        <div class='site-header'>
+            
+
+
+            <img src="xiaomi.jpg" height="55" width="55" alt="" />
+
+            <a href="#">全部商品分类</a>
+            <a href="#">小米手机</a>
+            <a href="#">红米</a>
+            <a href="#">平板·笔记本</a>
+            <a href="#">电视</a>
+            <a href="#">盒子·影音</a>
+            <a href="#">路由器</a>
+            <a href="#">智能硬件</a>
+            <a href="#">服务</a>
+            <a href="#">社区</a>
+            
+            <div class="header-right">
+                <input type="text" placeholder='红米4A 小米手机' title='红米4X'/>
+                <input type="submit" />
+                
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <div class='nav-bar'>
+            <div class="nav-left">红米4X</div>
+            <div class="nav-right">
+                <a href="#section-intr">概述</a>
+                <span> | </span>
+                <a href="#">参数</a>
+                <span> | </span>
+                <a href="#">图集</a>
+                <span> | </span>
+                <a href="#">用户评价</a>
+                
+                <div id='cellphone-pay'>
+                    <a href="#">立即购买</a>
+                </div>
+            </div>
+            
+
+
+        </div>
+
+
+
+
+        <!-- 手机介绍 -->
+        <div class='section'> 
+            <div class='section-intr' id="section-intr"> 
+            <!--手机图片  -->
+            <div class="intr-left">
+
+                <img src="hongmi4x1.png" id='hongmi-pic1' height="564" width="593" alt="" />
+
+            </div>
+
+            <div class="intr-right">
+            <!-- 性能概述 -->
+            <div class="intr1">
+
+                <ul class="intr">
+                    
+                    <li><h2>18天待机</h2>
+                        <p>4100mAh 大电量</p></li>
+                    <li><h2>8核处理器</h2>
+                        <p>高通骁龙435处理器</p></li>
+                    <li><h2>舒适握感</h2>
+                        <p>单手握持经典尺寸</p></li>
+                    
+                </ul>   
+                <br />
+                <ul class="intr">
+                    <li><h2>5"高清屏</h2>
+                        <p>支持夜光屏、护眼模式</p></li>
+                    <li><h2>高画质相机</h2>
+                        <p>1300万像素后置相机</p></li>
+                    <li><h2>指纹识别</h2>
+                        <p>支持解锁、支付</p></li>
+                </ul>
+            </div>
+            <div></div>
+            <hr />
+            <br /><br />
+            
+            <!-- 颜色 三种 -->
+            <div class="intr2">
+                <p>颜色</p>
+                <ul>
+                    <th><img src="pink.png" height="45" width="47" alt="" /></th>
+                    <span></span>
+                    <th><img src="gold.png" height="39" width="46" alt="" /></th>
+                    <span></span><span></span>
+                    <th><img src="black.png" height="42" width="41" alt="" /></th>
+                </ul>
+                <br />
+                
+                <ul>
+                    <th>樱花粉</th>
+                    <span>|</span>
+                    <th>香橙金</th>
+                    <span>|</span>
+                    <th>低调黑</th>
+                    <span>|</span>
+                </ul>
+            </div>
+
+
+            </div>    
+
+
+
+            </div>
+
+             
+
+
+
+            <div class="section-version" id='section-version'>
+                <h2 class="section">版本</h2>
+                
+                <div class="section-contain">
+                   <div class="version-cont1">
+                    <pre>
+2GB + 16GB
+骁龙435 最高主频 1.4GHz 
+Adreno 505 图形处理器
+支持额外扩容 128GB(Vfat格式)
+
+                    </pre>
+                    </div>
+
+                    <div class="version-cont2">
+                     <pre>
+3GB + 32GB
+骁龙435 最高主频 1.4GHz
+Adreno 505 图形处理器
+支持额外扩容 128GB(Vfat格式)
+
+                     </pre>
+                     </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+
+
+            <div class="section-battery" id='section-battery'>
+            <!-- 续航时间表格 -->
+                <h2 class="section">续航</h2>
+                
+                <table class='battery'>
+                    <th>通话</th>
+                    <th>视频播放    </th>
+                    <th>游戏</th>
+                    <th>4G 待机   </th>
+                    <th>音频播放    </th>
+                    <th>阅读</th>
+                    <th>导航</th>
+
+                    <tr>
+                        <td>36小时    </td>
+                        <td>15小时    </td>
+                        <td>13小时    </td>
+                        <td>18天 </td>
+                        <td>87小时    </td>
+                        <td>26小时   </td>
+                        <td>15小时</td>
+                    </tr>
+                </table>
+                <div class="section-contain"></div>
+            </div>
+
+
+            <div class="section-size" id='section-size'>规则</div>
+            <div class="section-camera" id='section-camera'>相机</div>
+            <div class="section-screen" id='section-screen'>屏幕</div>
+            <div class="section-network" id='section-network'>网络</div>
+            <div class="section-key" id='section-key'>指纹识别</div>
+
+            <div class="section-note">
+                <p>注释：购物支付指通过小米钱包购物支付。4G+ 相比 4G 网络理论下行速度提升 1 倍。续航数据为我司实验室数据，亮屏亮度为87，每次测试需要将手机充满电，执行测试任务，一直到手机没电为止，记录持续时长，通过电流计算得出的理论数据。</p>
+                
+            </div>
+            
+
+        </div>
+
+        
+
+        
+    </body>
+</html>
