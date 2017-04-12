@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <style>
+            .di {
+                height: 200px;
+                width: 200px;
+                background: green;
+                color: white;
+
+            }
+        </style>
+    </head>
+    <body onload="checkCookies()">
+        <script>
+            function checkCookies () {
+                if (navigator.cookieEnabled == true) {
+                    alert ("coocie is on")
+
+                }
+                else {
+                    alert("coocie is off")
+                }
+            } 
+        </script>
+        <p>提示框告诉你，浏览器是否启用cookie</p>
+        <hr />
+        
+        <script>
+            // **************
+            // @动态获取时间，刷新一次
+            // ***************
+
+            document.write(Date());
+        </script>
+
+        <div id="main">
+            <p>The DOM　is very useful</p>
+            <p> this is for 演示 getElement<strong>s</strong> ByTagName方法 </p>
+        </div>
+
+        <script type="text/javascript" src='js1.js'></script>
+
+        <hr />
+        
+        <h1 id="header">old header</h1>
+        
+        <script>
+        var element = document.getElementById("header");
+        element.innerHTML = "now is the new已经被修改啦";
+        </script>
+
+        <hr />
+
+        <a id='a' href="http://www.baidu.com/">baidu</a>
+
+        <script>
+            document.getElementById('a').href = "http://www.sina.com.cn/"
+        </script>
+
+        <hr />
+        <h1 id="color">改变原来的黑颜色</h1>
+
+        <script>
+            document.getElementById("color").style.color = "blue";
+        </script>
+
+        <hr />
+
+        <h1 id="color1">change this color after clicking</h1>
+
+        <button type="button" onclick="document.getElementById('color1').style.color = 'red'">变变变</button>
+
+        <hr />
+
+        <p id="visi">a paragragh</p>
+        <input type="button" value="隐藏文本" onclick="document.getElementById('visi').style.visibility = 'hidden'"/>
+        <input type="button" value="show文本" onclick="document.getElementById('visi').style.visibility = 'visible'"/>
+
+        <hr />
+
+        <h1 onclick="this.innerHTML='thank you'">click here</h1>
+
+        <h1 onclick="changetext(this)">click here (another way)</h1 >
+        <script> 
+        function changetext(id) {
+            id.innerHTML = "thank you";
+        }
+        </script>
+
+        <hr />
+
+        <p id='dat'>f</p>
+        <button onclick="displayDate()">通过元素属性</button>
+        <script>
+        function displayDate(){
+            document.getElementById("dat").innerHTML = Date();
+        }
+        </script>
+
+        <p id="date1">f</p>
+        <button id="myBtn">通过js，但是这里一个html只能有一地方出现Date()</button>
+        <script>
+        // document.getElementById("myBtn").onclick = function() {displayDate()};
+        // function displayDate() {
+        //     document.getElementById('date1').innerHTML = Date();
+        // }
+        </script>
+
+        <hr />
+        <h4>onchange</h4>
+
+        <script>
+            function myFun() {
+                var x = document.getElementById("frame");
+                x.value = x.value.toUpperCase();
+            }
+        </script>
+
+        <p> 当离开时，执行函数转换为大写：</p>
+        <input type="text" id="frame" onchange="myFun()" />
+
+        <hr />
+        <h4>onmouseover; mOver mOut</h4>
+        
+        <div onmouseover="mOver(this)" onmouseout="mOut(this)" >move the mouse here</div>
+        <script>
+        function mOver(obj) {
+            obj.innerHTML = "thank you"
+
+        }
+        function mOut(obj) {
+            obj.innerHTML = "move here"
+        }
+        </script>
+
+        <hr />
+
+        <h4>onmousedown onmouseup</h4>
+
+        <div onmousedown="mDown(this)" onmouseup="mUp(this)" class='di' >click here</div>
+        <script>
+        function mDown(obj) {
+            obj.style.background = "blue";
+            obj.innerHTML = "释放鼠标"
+        }
+
+        function mUp(obj) {
+            obj.style.background = 'green';
+            obj.innerHTML = 'move here';
+        }
+        </script>
+
+
+        <hr />
+        <h4> add new element delete p1 in js</h4>
+
+        <div id="div1">
+            <p id="p1">1 paragraph.</p>
+            <p>2 paragraph.</p>
+        </div>
+
+        <script>
+        // 创建新的p
+        var para = document.createElement("p");
+        // 创建文本节点
+        var node = document.createTextNode("a new");
+        // 向p追加 这个文本节点
+        para.appendChild(node);
+        // 向已有元素追加新的p
+        var element = document.getElementById("div1");
+        element.appendChild(para);
+
+        // delete p1
+        // 必须已知父元素
+        var child = document.getElementById("p1");
+        element.removeChild(child);
+        </script>
+    </body>
+</html>

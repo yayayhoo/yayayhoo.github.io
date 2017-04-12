@@ -1,0 +1,87 @@
+/* 
+* @Author: anchen
+* @Date:   2017-04-08 12:45:45
+* @Last Modified by:   anchen
+* @Last Modified time: 2017-04-08 12:57:15
+*/
+
+/*****************************************
+这里是fcc 第二个projection的样式表
+******************************************/
+
+
+/*全局宽度 和背景颜色*/
+*{
+    width: 1300px;
+    background-color: #DAA569;
+}
+
+
+
+/*****************************************
+head nav part
+******************************************/
+.nav{
+    background-color: #4169E1;
+    height: 100px;
+    position: fixed;
+
+}
+
+.nav-left{
+    margin-left: 100px;
+    float: left;
+    width: 80px;
+}
+.nav-left img{
+    height: 80px;
+    width: 80px;
+    margin: 10px 0 0 0;
+}
+
+.nav-right{
+    font-size: 30px;
+    width: 400px;
+    margin:40px 100px 0 0 ;
+    float: right;
+    background-color: #4169E1;
+    /*border: 1px solid black;*/
+}
+.nav-right a{
+    margin-right: 5px;
+    text-decoration: none;
+}
+.nav-right a:link{
+    color: gray;
+    background-color: #4169E1;
+
+}
+.nav-right a:visited{
+    color: gray;
+    background-color: white;
+
+}
+.nav-right a:hover{
+    color: #00FF00;
+
+}
+
+
+/*主要部分*/
+.main{
+    margin-left : 100px ;
+    margin-right: 100px;
+    border: 1px solid black;
+}
+
+.section1{
+    height: 300px;
+    font-size: 20px;
+}
+.section1 p{
+    width: 500px;
+    float: left;
+}
+.section img{
+
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <!-- 不知不觉变成了css大杂烩 -->
+        <style>
+            /*h1 3d效果*/
+            h1 {
+              text-shadow: 0 1px 0 #ccc,
+                           0 2px 0 #c9c9c9,
+                           0 3px 0 #bbb,
+                           0 4px 0 #b9b9b9,
+                           0 5px 0 #aaa,
+                           0 6px 1px rgba(0,0,0,.1),
+                           0 0 5px rgba(0,0,0,.1),
+                           0 1px 3px rgba(0,0,0,.3),
+                           0 3px 5px rgba(0,0,0,.2),
+                           0 5px 10px rgba(0,0,0,.25),
+                           0 10px 10px rgba(0,0,0,.2),
+                           0 20px 20px rgba(0,0,0,.15);}
+  
+                /*三个值，分别是 x轴偏移值，y轴，阴影大小值*/
+               /* h1 {
+                  text-shadow: 0px 2.5px 5px #222;
+                }*/
+
+                
+                /**************************************************
+                边框阴影
+                 *********************************************/
+                .shadow {
+
+                    /*offset-x | offset-y | blur-radius | spread-radius | color*/
+                     /*box-shadow: 5px 15px 10px 5px teal;*/
+
+                     /*还可以设置左上和右下的不同效果*/
+                     /*box-shadow: 3px 3px red, -1em 0 0.4em olive;*/
+                    
+                    /*把阴影往里面， 这个造成效果：框变黑*/
+                     /*box-shadow: inset 0 0 50px 10px rgba(0, 0, 0, 1);
+*/
+                    /*综合内外*/
+                     box-shadow: 15px 15px 10px 20px rgba(0, 0, 0, .8),inset 0 0 50px 10px rgba(0, 0, 0, 1);
+                }
+                .radius {
+                    border: 10px solid black;
+                    border-radius: 20px 10px;
+
+                     /*border-top-left-radius: 20px;
+                      border-top-right-radius: 10px;
+                      border-bottom-right-radius: 20px;
+                      border-bottom-left-radius: 10px; */
+                    
+                }
+                .gradient {
+                    width: 100px;
+                    height: 100px;
+                    /*background: linear-gradient(blue, white);*/
+
+                    /*第一个老版本写法,推荐第二种*/
+                    /*background: -prefix-linear-gradient(left, blue, white);*/
+                    /*background: linear-gradient(to bottom right, blue, white);*/
+
+                    /*multi-color*/
+                    /*background: linear-gradient(to bottom, blue, white 80%, orange);*/
+
+                      background: linear-gradient(to right, red, orange, yellow, green, blue);
+
+
+                }
+
+                .multi_bg_example {
+                  width: 100%;
+                  height: 400px;
+                  background-image: url(https://mdn.mozillademos.org/files/11305/firefox.png), url(https://mdn.mozillademos.org/files/11307/bubbles.png), linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));
+                  background-repeat: no-repeat, no-repeat, no-repeat;
+                  background-position: bottom right, left, right;
+                  background: -moz-linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0)), -webkit-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0)), -ms-linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0)), linear-gradient(to right, rgba(30, 75, 115, 1), rgba(255, 255, 255, 0));
+                }
+                ul {
+                    
+                  /*list-style: cjk-ideographic;*/
+
+                  list-style: trad-chinese-formal;
+                }
+                p.animation {
+                    display: block;
+                    -webkit-margin-before: 1em;
+                    -webkit-margin-after: 1em;
+                    -webkit-margin-start: 0px;
+                    -webkit-margin-end: 0px;
+                    animation-duration: 3s;
+                    animation-name: slidein;
+                    animation-iteration-count: infinite;
+                    animation-direction: alternate;
+                  /*animation-duration: 3s;
+                  animation-name: slidein;
+                  animation-iteration-count: infinite;
+                */}
+               div.outer p {
+                 color:orange;
+               }
+               div:not(.outer) p {
+                 color: lime;
+               }
+                
+                /***********************************
+                workflow :; visible hidden auto scroll
+                 ***********************************/
+               p.visible {
+                width: 12em;
+                height: 5em;
+                border: dotted;
+                overflow: visible;
+               }
+                p.hidden {
+                width: 12em;
+                height: 5em;
+                border: dotted;
+                overflow: hidden;
+               }
+                p.scroll {
+                width: 12em;
+                height: 5em;
+                border: dotted;
+                overflow: scroll;
+               }
+                p.auto {
+                width: 12em;
+                height: 5em;
+                border: dotted;
+                overflow: auto;
+               }
+
+        </style>
+    </head>
+
+    <body>
+        <h1 id='h1'>a heading</h1>
+
+        <p class="visible">visible (default)Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+        <p class="hidden">visible (default)Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+        <p class="scroll">visible (default)Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p>
+        <p class="auto">visible (default)Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.</p><p class="auto">visoloremque laudantium.</p>
+
+        <ul>
+            <li>1</li>
+            <li>2</li>
+        </ul>
+        <div class="outer">
+          <p>This is in the outer div.</p>
+          <div class="inner">
+            <p>This text is in the inner div.</p>
+          </div>
+        </div>
+
+        <p class="animation">
+            frame in.
+        </p>
+
+        <div class="shadow">
+            
+            <p>this is a paragragh.</p>
+            <p>this is a paragragh.</p>
+            <p>this is a paragragh.</p>
+            <p>this is a paragragh.</p>
+            <p>this is a paragragh.</p>
+        </div>
+        <br />
+        <div class="radius">
+            <p>this is a paragragh.</p>
+            <p>this is a paragragh.</p>
+            <p>this is a paragragh.</p>
+            <p>this is a paragragh.</p>
+            <p>this is a paragragh.</p>
+        </div>
+        <div class="gradient">
+            
+        </div>
+
+        <div class='multi_bg_example'></div>
+
+
+
+        <p></p>
+<br /><br /><br />
+        <button onclick='myFunc()'>click here</button>
+        <!-- 验证输入 -->
+        <input type="text" id='demo' />
+        <input type="submit" value="submit" onclick="myfu()" />
+        <!-- <script type='text/javascript' src='js.js'>
+            // document.write('<h1> this is a heading.</h1>');
+            // document.write("<h1> this is </h1>");
+            // console.log('hello.');
+            alert("你好！")
+        </script>
+        <script type="text/javascript" src="js.js"></script> -->
+
+        <script type="text/javascript" src="js.js"></script>
+        
+       <!--  <script type="text/javascript" >
+            document.getElementById('h1').innerHTML='My first js.'
+            document.write('ok');
+            console.log('hello');
+            // alert('ol')
+        </script> -->
+
+    </body>
+</html>
