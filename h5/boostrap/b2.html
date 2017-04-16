@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!-- 适用于不同设备 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset='utf-8'>
+        <!-- bootsrap css -->
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+    </head>
+    <body>
+
+        <!-- 列表 -->
+        <ul class="list-inline">
+            <li>one内联 </li>
+            <li>two列表</li>
+            <li>three第三</li>
+        </ul>
+
+        <dl>
+            <dt>description 1自定义</dt>
+            <dd>item 1列表</dd>
+            <dt>description 2 标签dt</dt>
+            <dd>item 2标签dd</dd>
+        </dl>
+        <dl class="dl-horizontal">
+            <dt>description 水平</dt>
+            <dd>item 1列表</dd>
+            <dt>description 2 标签dt</dt>
+            <dd>item 2标签dd</dd>
+        </dl>
+
+        <!-- pre 带滚动条 -->
+        <pre class="pre-scrollable">
+            内容可滚动
+        Text in a pre element
+        is displayed in a fixed-width
+        font, and it preserves
+        both      spaces and
+        line breaks.
+        Text in a pre element
+        is displayed in a fixed-width
+        font, and it preserves
+        both      spaces and
+        line breaks.
+        内容可滚动
+        Text in a pre element
+        is displayed in a fixed-width
+        font, and it preserves
+        both      spaces and
+        line breaks.
+        Text in a pre element
+        is displayed in a fixed-width
+        font, and it preserves
+        both      spaces and
+        </pre>
+
+        <!-- 代码显示 -->
+       <p>里面嵌入<code>  &lt;header&gt;  var num；</code>内联代码code</p>
+       <pre>
+           &lt;heaer &gt;
+                artile
+           &lt;/heaer &gt;
+
+       </pre>
+    
+        <p>table-striped 在tbody 内添加斑马线形式的条纹 ie8 cann't</p>
+        <table class="table table-striped table-hover table-bordered   ">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>firstname</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>anna</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>brown</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>cathe</td>
+                </tr>
+            </tbody>
+        </table> 
+
+        <p>鼠标悬停效果，悬停行变色</p>
+        <table class="table  table-hover table-bordered   ">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>firstname</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>anna</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>brown</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>cathe</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>table-condensed 类让表格更加紧凑:</p>
+        <table class="table  table-condensed  ">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>firstname</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>anna</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>brown</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>cathe</td>
+                </tr>
+            </tbody>
+        </table> 
+
+        <p>.active 将悬停的颜色应用在行,单元格上</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>firstname</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr class="active">
+                    <td>1</td>
+                    <td>anna</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>brown</td>
+                </tr>
+
+                <tr>
+                    <td class="active">3</td>
+                    <td>cathe</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>.success 执行成功的操作</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>firstname</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr class="success">
+                    <td>1</td>
+                    <td>anna</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>brown</td>
+                </tr>
+
+                <tr>
+                    <td class="success">3</td>
+                    <td>cathe</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>.info 信息变化的操作</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>firstname</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr class="info">
+                    <td>1</td>
+                    <td>anna</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>brown</td>
+                </tr>
+
+                <tr>
+                    <td class="info">3</td>
+                    <td>cathe</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>.warning 警告</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>firstname</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr class="warning">
+                    <td>1</td>
+                    <td>anna</td>
+                </tr>
+
+                <tr>
+                    <td class="warning">2</td>
+                    <td>brown</td>
+                </tr>
+
+                <tr>
+                    <td>3</td>
+                    <td>cathe</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p>.danger 危险操作</p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>firstname</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                <tr class="danger">
+                    <td>1</td>
+                    <td>anna</td>
+                </tr>
+
+                <tr>
+                    <td>2</td>
+                    <td>brown</td>
+                </tr>
+
+                <tr>
+                    <td class="danger">3</td>
+                    <td>cathe</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- 基本表单 -->
+        <input id="search" type="text" value="" placeholder="  "  /><span class="glyphicon glyphicon-search"></span> 
+
+        <form action="" role="form">
+            <div class="form-group">
+                <label for="name">名称</label>
+                <input type="text" class="form-control" id="name"  placeholder="inuput your name"/>
+            </div>
+
+            <div class="form-group">
+                <label for="inputfile">文件输入</label>
+                <input type="file" id="inputfile" />
+                <p class="help-block">这里是帮助文本</p>
+            </div>
+
+            <div class="checkbox">
+                <label for=""> <input type="checkbox" />请打勾</label>
+            </div>
+
+        </form>
+
+        <!-- 内联表单  class .form-inline-->
+        <!-- 默认情况下，Bootstrap 中的 input、select 和 textarea 有 100% 宽度。在使用内联表单时，您需要在表单控件上设置一个宽度。 -->
+<!-- 使用 class .sr-only，您可以隐藏内联表单的标签。 -->
+        <form action="" role="form" class="form-inline ">
+            <div class="form-group">
+                <label for="name">名称</label>
+                <input type="text" class="form-control" id="name"  placeholder="inuput your name"/>
+            </div>
+
+            <div class="form-group">
+                <label for="inputfile">文件输入</label>
+                <input type="file" id="inputfile" />
+                <p class="help-block">这里是帮助文本</p>
+            </div>
+
+            <div class="checkbox">
+                <label for=""> <input type="checkbox" />请打勾</label>
+            </div>
+
+        </form>
+
+        <!-- 水平表单 -->
+
+        <form action="" role="form" class="form-horizontal">
+            <div class="form-group">
+                <label for="firstname" class="col-sm-2 control-label">name</label>
+                <!-- 在这里如果把input 设置class col-sm-10，input仍旧是100% -->
+                <div class="col-sm-10">
+                <input type="text" class=" form-control" id="firstname" placeholder="your name"  />
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lastname" class="col-sm-2 control-label">姓氏</label>
+                
+                <div class="col-sm-10">
+                <input type="text" class=" form-control" id="lastname" placeholder="your family name"  />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                        <label for="">
+                            <input type="checkbox" /> 请记住我
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">load</button>
+            </div>
+
+
+        </form>
+
+        <!-- 一个文本框 -->
+        <form action="" role="form">
+            <label for="name">文本框</label>
+            <textarea class="form-control" name="" id="" cols="1" rows="3"></textarea>
+        </form>
+
+        <!-- 选择列表 下拉 -->
+        <div class="form-group">
+            <label for="name">选择列表</label>
+            <select name="" class="form-control" id="">
+                <option value="one">1</option>
+                <option value="one">2</option>
+                <option value="one">3</option>
+                <option value="one">4</option>
+            </select>
+            <label for="name">可多选择列表（ctrl）</label>
+            <select multiple name="" class="form-control" id="">
+                <option value="one">1</option>
+                <option value="one">2</option>
+                <option value="one">3</option>
+                <option value="one">4</option>
+            </select>
+        </div>
+
+        <!-- 静态控件 应该直接用文本可以实现，但这个保存了表单样式-->
+        <form action="" class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="" class="col-sm-2 control-label">Email</label>
+
+                <div class="col-sm-10"> 
+                    <p class="form-control-static"> email@emai.com</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="inputPassWord" class="col-sm-2 control-label"> password</label>
+
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="inputPassWord" placeholder="input your password" />
+                    
+                </div>
+            </div>
+        </form>
+
+
+
+        <!-- jq -->
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <!-- bootstrap -->
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+        <script>
+        var u = "\u2315";
+        // alert("message")
+        document.getElementById("search").placeholder= u;
+        </script>
+    </body>
+</html>

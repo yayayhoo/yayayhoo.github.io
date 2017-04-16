@@ -2,7 +2,7 @@
 * @Author: anchen
 * @Date:   2017-04-12 09:40:39
 * @Last Modified by:   anchen
-* @Last Modified time: 2017-04-12 11:43:53
+* @Last Modified time: 2017-04-12 16:47:45
 */
 
 // $(document).ready(function(){
@@ -189,5 +189,7 @@ document.write(arr1.concat(arr2) + "<br>");
 
 
 document.write(arr1.join() + "<br>");
-document.write();
-document.write();
+document.write("<hr />");
+
+
+

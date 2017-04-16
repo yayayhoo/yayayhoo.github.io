@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <style>
+            #p1 {
+                border: 1px dotted black;
+            }
+        </style>
+    </head>
+    <body onload="checkCookies()">
+        <div id="div1">
+        <p id='p1' > 以下的例子hello world</p>
+        <p> 以下的内容来自上面的p</p>
+        <p id="del">a p to be deleted</p>
+        <p id="re">this will be replaced</p>
+
+        <p onclick="this.innerHTML='hello'">click here</p>
+        <p id="jsonclick">js onclick</p>
+
+        </div>
+        <button onclick="this.innerHTML=Date()">点击展示时间</button>
+
+        <input type="button" onclick="document.body.style.backgroundColor = 'purple'" value="change color in html"/>
+        <input type="button" onclick="fun1()" value="change color js"/>
+        <input type="button" onclick="fun2()" value="change p color js"/>
+        
+    <script src="dom2.js"></script>
+    </body>
+</html>

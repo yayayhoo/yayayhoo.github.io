@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title> DOM example</title>
+    </head>
+    <body onload="accesskey()" onmousedown="coordinates(event)" onkeyup="whichButton(event)">
+        <a id="baidu" name="first" href="http://www.baidu.com">to baidu</a>
+        <button onclick="changeLink()">change the link</button>
+        <button onclick="getFocus()">get focus</button>
+        <button onclick="loseFocus()">lose focus</button>
+
+        <p><a id='w3' href="http://www.w3school.com.cn">w3school</a>(alt + w)打开链接</p>
+        <p><a id="sina" href="http://www.sina.com.cn">sina</a>(alt + d)打开链接</p>
+        
+        <input type="button" value="打开并写入一个新文档" onclick="createNewDoc()" />
+
+        <form action="" name="form1"></form>
+        <form action="" name="form2" id="form2"></form>
+        <form action="" name="form3"></form>
+
+        <script src="dom3.js"></script>
+    </body>
+</html>
