@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        <!-- video -->
+        <video src="中国人购物方式进化史 151112_高清.mp4" controls="controls"  loop="loop" preload="preload">Your browser does not support the video yet.</video>
+        <!-- 设置 暂停播放按钮 -->
+        <div style="">
+            <button onclick="playPause()">play / pause</button>
+            <button onclick="markBig()">big</button>
+            <button onclick="makeNorman()">normal</button>
+            <button onclick="makeSmall()">small</button>
+            <button onclick="make-volume()">volume</button>
+            <br />
+            <video id="video1" src="中国人购物方式进化史 151112_高清.mp4"></video>
+            
+        </div>
+
+        <script>
+            var myVideo = document.getElementById("video1");
+
+            function playPause() {
+                if (myVideo.paused) {
+                    myVideo.play();
+                }
+                else {myVideo.pause()};
+            }
+
+            function makeBig() {
+                myVideo.width=1300;
+            }
+            function makeNorman() {
+                myVideo.width=500;
+            }
+            function makeSmall() {
+                myVideo.width=300;
+            }
+            // function make-volume() {
+            //     myVideo.volume();
+            // }
+
+        </script>
+
+        <!-- audio -->
+        <audio src="DEPAPEPE - 寝待ちの月.mp3" controls="controls"></audio>
+
+
+        <div>
+            <button onclick="audioPlayPause()">play / pause</button>
+            <audio id="audio1" src="DEPAPEPE - 寝待ちの月.mp3" controls="controls"></audio>
+        </div>
+        <script>
+            var myAudio = document.getElementById("audio1");
+            function audioPlayPause() {
+                if (myAudio.paused) {
+                    myAudio.play();
+                }
+                else {myAudio.pause();}
+            }
+        </script>
+
+
+        <!-- drag -->
+
+        <p>请把 W3School 的图片拖放到矩形中：</p>
+
+        <div id="div1" style="width:198px; height:66px;padding:10px;border:1px solid #aaaaaa;" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <br />
+        <img id="drag1" src="https://123p4.sogoucdn.com/imgu/2017/04/20170403182346_945.jpg" draggable="true" ondragstart="drag(event)" />
+        
+
+        <script type="text/javascript">
+        function allowDrop(ev)
+        {
+        ev.preventDefault();
+        }
+
+        function drag(ev)
+        {
+        ev.dataTransfer.setData("Text",ev.target.id);
+        }
+
+        function drop(ev)
+        {
+        ev.preventDefault();
+        var data=ev.dataTransfer.getData("Text");
+        ev.target.appendChild(document.getElementById(data));
+        }
+        </script>
+
+        <p>video drag</p>
+
+        <div id="div2" style="width:900px; height:606px;padding:10px;border:1px solid #aaaaaa;" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>thisis something</p>
+            <p>这个还可以<br />决定<br />视频拖<br />放的<br />位置</p>
+        </div>
+        <div id="div2" style="width:900px; height:606px;padding:10px;border:1px solid #aaaaaa;" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <p>thisis something</p>
+            <p>这个还可以<br />决定<br />视频拖<br />放的<br />位置</p>
+        </div>
+        <video src="中国人购物方式进化史 151112_高清.mp4" controls="controls" id="video2" draggable="true" ondragstart="drag(event)"></video>
+
+        <script>
+            function allowDrop(ev) {
+                ev.preventDefault();
+            }
+            function drag(ev) {
+                ev.dataTransfer.setData("Text", ev.target.id);
+            }
+            function drop(ev) {
+                ev.preventDefault();
+                var data = ev.dataTransfer.getData("Text");
+                ev.target.appendChild(document.getElementById(data));
+            }
+        </script>
+        <br />
+
+        <!-- canvas -->
+        <canvas id="canvas1" width="200" height="300"></canvas>
+        <br />
+        <script>
+            // 找到 canvas元素
+            var c = document.getElementById("canvas1");
+            // 创建context对象 2d
+            var cxt = c.getContext("2d");
+            // 绘制 红色 的 矩形
+            cxt.fillStyle="#f00";
+            cxt.fillRect(0, 0, 150, 70);
+
+        </script>
+
+        <!-- 鼠标坐标 -->
+        <div id="coordiv" style="float:left;width:199px;height:99px;border:1px solid #c3c3c3" onmousemove="cnvs_getCoordinates(event)" onmouseout="cnvs_clearCoordinates()">
+        </div>
+        <div id="xycoordinates"></div>
+
+        <script>
+            function cnvs_getCoordinates(e) {
+                x = e.clientX;
+                y = e.clientY;
+
+                document.getElementById("xycoordinates").innerHTML="Coordinates: ("+ x + ","+y +")"
+            }
+
+            function cnvs_clearCoordinates() {
+                document.getElementById("xycoordinates").innerHTML="";
+            }
+        </script>
+
+        <canvas id="canvas2" width="200" height="100" style="border:1px solid #c3c3c3;"></canvas>
+        <script>
+            var c = document.getElementById("canvas2");
+            var cxt = c.getContext("2d");
+
+            cxt.moveTo(10, 10);
+            cxt.lineTo(150, 50);
+            cxt.lineTo(10, 50);
+            cxt.stroke();
+        </script>
+
+        <canvas id="canvas3" width="200" height="100" style="border:1px solid #c3c3c3;"></canvas>
+        <script>
+                var c = document.getElementById("canvas3")
+                var cxt = c.getContext("2d");
+
+                cxt.fillStyle="#f00";
+                cxt.beginPath();
+                cxt.arc(110, 18, 15, 0, Math.PI*2, true);
+                cxt.closePath();
+                cxt.fill();
+        </script>
+        <canvas id="canvas4" width="200" height="100" style="border:1px solid #c3c3c3;"></canvas>
+        <script>
+                var c = document.getElementById("canvas4")
+                var cxt = c.getContext("2d");
+
+                cxt.fillStyle="#f00";
+                // 必须要同时指定字体
+                cxt.font = "60px Arial";
+                cxt.fillText("text", 12, 50);
+        </script>
+        <canvas id="canvas5" width="200" height="100" style="border:1px solid #c3c3c3;"></canvas>
+        <script>
+                var c = document.getElementById("canvas5")
+                var cxt = c.getContext("2d");
+                var grd = cxt.createLinearGradient(0, 0, 200, 100)
+
+                grd.addColorStop(0, "#f00")
+                grd.addColorStop(1, "#0f0")
+                cxt.fillStyle = grd;
+                cxt.fillRect(0, 0 ,200, 100)
+        </script>
+        <canvas id="canvas6" width="200" height="100" style="border:1px solid #c3c3c3;"></canvas>
+        <script>
+                var c = document.getElementById("canvas6")
+                var cxt = c.getContext("2d");
+                var img = new Image(200, 100)；
+
+                img.src = "https://123p3.sogoucdn.com/imgu/2017/04/20170425084447_955.jpg";
+                cxt.drawImage(image, 0, 0);
+        </script>
+
+
+        <!-- 地理定位 -->
+        <p id="geo1">click for geocoordinates</p>
+        <button onclick="getLocation()">geoGet</button>
+
+        <script>
+            var x = document.getElementById("geo1");
+            function getLocation() {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+                }
+                else {
+                    x.innerHTML= "geolocation is not support."
+                }
+            }
+            function showPosition(position) {
+                x.innerHTML = "Latitude: "+ position.coords.latitude +"Longtitude: " + position.coords.longtitude;
+            }
+        </script>
+
+        <!-- 计数 local -->
+        <script type="text/javascript">
+
+        if (localStorage.pagecount)
+            {
+            localStorage.pagecount=Number(localStorage.pagecount) +1;
+            }
+        else
+            {
+            localStorage.pagecount=1;
+            }
+        document.write("Visits: " + localStorage.pagecount + " time(s).");
+
+        </script> 
+
+        <p>刷新页面会看到计数器在增长。</p>
+
+        <p>请关闭浏览器窗口，然后再试一次，计数器会继续计数。</p>
+        
+        <!-- session -->
+        <p><button onclick="clickCounter()" type="button">请点击这里</button></p>
+        <div id="result"></div>
+        <p>请点击按钮使计数器递增。</p>
+        <p>请关闭浏览器或标签页，然后再试一次，计数器会重置。</p>
+        <script>
+        function clickCounter() {
+            if(typeof(Storage) !== "undefined") {
+                if (sessionStorage.clickcount) {
+                    sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+                } else {
+                    sessionStorage.clickcount = 1;
+                }
+                document.getElementById("result").innerHTML = "在本 session 中，您已经点击这个按钮 " + sessionStorage.clickcount + " 次。";
+            } else {
+                document.getElementById("result").innerHTML = "抱歉！您的浏览器不支持 Web Storage ...";
+            }
+        }
+        </script>
+
+
+        <!-- web workers -->
+        
+        <p>计数: <output id="result"></output></p>
+        <button onclick="startWorker()">开始 Worker</button> 
+        <button onclick="stopWorker()">停止 Worker</button>
+        <br /><br />
+
+        <script>
+        var w;
+
+        function startWorker()
+        {
+        if(typeof(Worker)!=="undefined")
+          {
+          if(typeof(w)=="undefined")
+          {
+          w=new Worker("/example/html5/demo_workers.js");
+          }
+          w.onmessage = function (event) {
+            document.getElementById("result").innerHTML=event.data;
+            };
+          }
+        else
+          {
+          document.getElementById("result").innerHTML="Sorry, your browser does not support Web Workers...";
+          }
+        }
+
+        function stopWorker()
+        { 
+        w.terminate();
+        }
+        </script>
+    </body>
+</html>

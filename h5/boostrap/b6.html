@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset='utf-8'>
+        <!-- bootsrap css -->
+        <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css" />
+        
+        
+        <!-- bootstrap 自带字体库-->
+        <!-- web font svg -->
+        <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+        <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+
+        <!-- jq -->
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <!-- bootstrap -->
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" >
+          <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>                        
+              </button>
+              <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <div>
+              <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                  <li><a href="#section1">Section 1</a></li>
+                  <li><a href="#section2">Section 2</a></li>
+                  <li><a href="#section3">Section 3</a></li>
+                  <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#section41">Section 4-1</a></li>
+                      <li><a href="#section42">Section 4-2</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </nav>    
+
+        <div id="section1" class="container-fluid">
+          <h1>Section 1</h1>
+          <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+          <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        </div>
+        <div id="section2" class="container-fluid">
+          <h1>Section 2</h1>
+          <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+          <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        </div>
+        <div id="section3" class="container-fluid">
+          <h1>Section 3</h1>
+          <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+          <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        </div>
+        <div id="section41" class="container-fluid">
+          <h1>Section 4 Submenu 1</h1>
+          <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+          <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        </div>
+        <div id="section42" class="container-fluid">
+          <h1>Section 4 Submenu 2</h1>
+          <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+          <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+        </div>
+
+
+        <h4>提示工具（Tooltip）插件 - 锚</h4>这是一个 <a href="#" class="tooltip-test" data-toggle="tooltip" 
+           title="默认的 Tooltip">
+           默认的 Tooltip</a>.
+        这是一个 <a href="#" class="tooltip-test" data-toggle="tooltip" 
+           data-placement="left" title="左侧的 Tooltip">
+           左侧的 Tooltip</a>.
+        这是一个 <a href="#" data-toggle="tooltip" data-placement="top" 
+           title="顶部的 Tooltip">
+           顶部的 Tooltip</a>.
+        这是一个 <a href="#" data-toggle="tooltip" data-placement="bottom" 
+           title="底部的 Tooltip">
+           底部的 Tooltip</a>.
+        这是一个 <a href="#" data-toggle="tooltip" data-placement="right" 
+           title="右侧的 Tooltip">
+           右侧的 Tooltip</a><br><h4>提示工具（Tooltip）插件 - 按钮</h4><button type="button" class="btn btn-default" data-toggle="tooltip" 
+           title="默认的 Tooltip">
+           默认的 Tooltip</button><button type="button" class="btn btn-default" data-toggle="tooltip" 
+           data-placement="left" title="左侧的 Tooltip">
+           左侧的 Tooltip</button><button type="button" class="btn btn-default" data-toggle="tooltip" 
+           data-placement="top" title="顶部的 Tooltip">
+           顶部的 Tooltip</button><button type="button" class="btn btn-default" data-toggle="tooltip" 
+           data-placement="bottom" title="底部的 Tooltip">
+           底部的 Tooltip</button><button type="button" class="btn btn-default" data-toggle="tooltip" 
+           data-placement="right" title="右侧的 Tooltip">
+           右侧的 Tooltip</button><script>
+           $(function () { $("[data-toggle='tooltip']").tooltip(); });</script>
+
+        <div style="padding: 100px 100px 10px;">
+           这是一个 <a href="#" class="tooltip-show" data-toggle="tooltip" 
+              title="show">Tooltip 方法 show   </a>.
+
+           这是一个 <a href="#" class="tooltip-hide" data-toggle="tooltip" 
+              data-placement="left" title="hide">Tooltip 方法 hide   </a>.
+
+           这是一个 <a href="#" class="tooltip-destroy" data-toggle="tooltip" 
+              data-placement="top" title="destroy">Tooltip 方法 destroy   </a>.
+
+           这是一个 <a href="#" class="tooltip-toggle" data-toggle="tooltip" 
+              data-placement="bottom" title="toggle">Tooltip 方法 toggle   </a>.   <br><br><br><br><br><br>
+           <p class="tooltip-options" >
+              这是一个 <a href="#" data-toggle="tooltip" title="<h2>'am Header2         </h2>">Tooltip 方法 options      </a>.   </p>
+
+           <script>
+              $(function () { $('.tooltip-show').tooltip('show');});
+              $(function () { $('.tooltip-hide').tooltip('hide');});
+              $(function () { $('.tooltip-destroy').tooltip('destroy');});
+              $(function () { $('.tooltip-toggle').tooltip('toggle');});
+              $(function () { $(".tooltip-options a").tooltip({html : true });
+              });
+           </script><div>
+
+
+
+        <h4>提示工具（Tooltip）插件 - 锚</h4>这是一个 <a href="#" class="tooltip-show" data-toggle="tooltip" 
+           title="默认的 Tooltip">默认的 Tooltip</a>.<script>$(function () { $('.tooltip-show').tooltip('show');});$(function () { $('.tooltip-show').on('show.bs.tooltip', function () {
+           alert("Alert message on show");})});</script>
+
+        <div class="alert alert-warning">
+           <a href="#" class="close" data-dismiss="alert">
+              &times;   </a>
+           <strong>警告！</strong>您的网络连接有问题。</div>
+
+        <!-- JavaScript 放置在文档最后面可以使页面加载速度更快 -->
+
+        <!-- jq -->
+        <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+        <!-- bootstrap -->
+        <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+
+
+
+
+    </body>
+
+<!-- 垂直监听 -->
+
+    <!-- <body data-spy="scroll" data-target="#myScrollspy" data-offset="20">
+
+    <div class="container">
+      <div class="row">
+        <nav class="col-sm-3" id="myScrollspy">
+          <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="#section1">Section 1</a></li>
+            <li><a href="#section2">Section 2</a></li>
+            <li><a href="#section3">Section 3</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Section 4 <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#section41">Section 4-1</a></li>
+                <li><a href="#section42">Section 4-2</a></li>                     
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div class="col-sm-9">
+          <div id="section1">    
+            <h1>Section 1</h1>
+            <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+          </div>
+          <div id="section2"> 
+            <h1>Section 2</h1>
+            <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+          </div>        
+          <div id="section3">         
+            <h1>Section 3</h1>
+            <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+          </div>
+          <div id="section41">         
+            <h1>Section 4-1</h1>
+            <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+          </div>      
+          <div id="section42">         
+            <h1>Section 4-2</h1>
+            <p>Try to scroll this section and look at the navigation list while scrolling!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </body> -->
+</html>

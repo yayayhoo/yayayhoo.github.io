@@ -1,0 +1,133 @@
+/* 
+* @Author: anchen
+* @Date:   2017-04-22 14:51:26
+* @Last Modified by:   anchen
+* @Last Modified time: 2017-04-22 16:14:17
+*/
+img {
+    max-width: 100%;
+}
+/*@背景颜色 蓝色设置*/
+.bg-blue {
+    background-color: #337AB7;
+}
+
+div {
+    border: 1px dotted blue;
+}
+
+/****************
+@header
+**********************/
+.header {
+    height: 100px;
+    margin:  20px ;             
+}
+.header .pull-left img  {
+    margin:  20px ;             
+}
+.header a{
+    text-decoration: none
+}
+/*seach*/
+.search form {
+    border: 2px #337AB7 solid;
+    width: 100%;
+    /*margin:  20px 0;               */
+}
+.search form input {
+    width: 92%;
+}
+
+/*header-r
+ */
+#p13171 {
+    width: 30px;
+}
+.header-r {
+    font-size: 15px;
+    margin:  20px 0;          
+}
+
+
+/*****************
+@nav main
+*****************/
+
+
+/*nav */
+.nav h4{
+    font-size: 17px;
+}
+.nav p {
+    font-size: 15px;
+}
+
+.nav-button {
+        padding-top: 15px ;
+
+}
+
+.nav-button ul {
+    font-size: 16px;
+    margin-left: 0px ;
+
+}
+.nav-button ul li{
+    height: 50px;
+    display: inline;
+    margin: 0 2.5px;
+   
+}
+
+
+/*menu-wrapper*/
+.wrapper-header {
+    height: 50px;
+
+}
+.wrapper-header  {
+    text-align: ;
+    padding: 5px 10px;
+}
+.wrapper-content {
+    width: 100%;
+    height: 70px;
+    float: none;
+
+    border-bottom: 2px #337AB7 solid;
+
+}
+
+.wrapper-content h4 {
+    margin: 5px 0 ;
+}
+.wrapper-content p {
+    margin: 5px 0;
+}
+
+/*slide-box*/
+.nav-m {
+    float: left;
+}
+
+
+.slide-box  {
+    /*height: 300px;
+    width: 772px;*/
+}
+
+.focus-item {
+    height: 236px;
+    width: 240px;
+}
+
+/*person-item*/
+.person-item {
+    height: 300px;
+}
+
+.person-item img {
+    width: 50px;
+
+}

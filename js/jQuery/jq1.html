@@ -3,12 +3,312 @@
     <head>
         <meta charset="utf-8">
         <script src="jquery-3.1.1.min.js"></script>
+
+        <style>
+            .important
+            {
+            font-weight:bold;
+            font-size:xx-large;
+            }
+
+            .blue
+            {
+            color:blue;
+            }
+            .bg-blue {
+                background: blue
+            }
+            .bg-yellow {
+                background: yellow
+            }
+        </style>
     </head>
     <body>
         
         <p>你点我我会走的</p>
         <p>我会走的</p>
         <p>走。。。</p>
+        <hr />
+        <button class="buttonClick1" type="button">click me</button>
+
+
+
+
+        <hr />
+        <h2>this is a heading</h2>
+        <p>this is a paragraph</p>
+        <p>this is another paragraph</p>
+        <button class="buttonClick2" type="button">click me</button>
+
+        <hr />
+        <h2>this is a heading</h2>
+        <p>this is a paragraph</p>
+        <p id="test">this is another paragraph</p>
+        <button id="buttonClick1" class="buttonClick3" type="button">click me</button>
+
+
+        <hr />
+        <h2>this is a heading</h2>
+        <p>this is a paragraph</p>
+        <p id="test">this is another paragraph</p>
+        <button id="buttonClick4" class="buttonClick4" type="button">click me</button>
+
+
+        <hr />
+        <h3>中国办事处</h3>
+        <button class="hide" type="button">隐藏</button>
+        <button class="show" type="button">show</button>
+        <div class="ex1">
+        <p>联系人：张先生<br /> 
+        北三环中路 100 号<br />
+        北京</p>
+        </div>
+
+        <h3>美国办事处</h3>
+        <div class="ex">
+        <button class="hide" type="button">隐藏</button>
+        <p>联系人：David<br /> 
+        第五大街 200 号<br />
+        纽约</p>
+        </div>
+
+
+        <hr />
+        <h3>中国办事处</h3>
+        <button class="toggle" type="button">toggle</button>
+        
+        <div class="ex">
+        <p>联系人：张先生<br /> 
+        北三环中路 100 号<br />
+        北京</p>
+        </div>
+
+        <h3>美国办事处</h3>
+        <div class="ex">
+        <button class="hide" type="button">隐藏</button>
+        <p>联系人：David<br /> 
+        第五大街 200 号<br />
+        纽约</p>
+        </div>
+        <hr />
+        <h3>中国办事处</h3>
+        <button class="fadeIn" type="button">fadeIn</button>
+        <button class="fadeOut" type="button">fadeOut</button>
+        
+        <div class="ex">
+        <p>联系人：张先生<br /> 
+        北三环中路 100 号<br />
+        北京</p>
+        </div>
+
+        <h3>美国办事处</h3>
+        <div class="ex">
+        <button class="hide" type="button">隐藏</button>
+        <p>联系人：David<br /> 
+        第五大街 200 号<br />
+        纽约</p>
+        </div>
+        <hr />
+        <h3>中国办事处</h3>
+        <button class="fadeToggle" type="button">fadeToggle</button>
+
+        <button class="fadeTo" type="button">fadeTo</button>
+        
+        <div class="ex">
+        <p>联系人：张先生<br /> 
+        北三环中路 100 号<br />
+        北京</p>
+        </div>
+
+        <h3>美国办事处</h3>
+        <div class="ex">
+        <button class="hide" type="button">隐藏</button>
+        <p>联系人：David<br /> 
+        第五大街 200 号<br />
+        纽约</p>
+        </div>
+
+        <hr />
+        <button class="animate">animate</button>
+        <button class="reset">reset</button>
+        <p style="border: 1px black solid">animate effect</p>
+
+        <button class="animate2">ani2</button>
+        <p style=""></p>
+
+        <hr />
+        <button class="start">start animation</button>
+        <button class="stop">stop animation</button>
+
+        <div class="box" style="background: #333; width: 100px; height: 100px;"></div>
+
+        <hr />
+        <div class="panel">
+        <p>W3School - 领先的 Web 技术教程站点</p>
+        <p>在 W3School，你可以找到你所需要的所有网站建设教程。</p>
+        </div>
+         
+         <button class="slideUp">slideup</button>
+         <button class="slideDown">slideDown</button>
+         <button class="slideToggle">slideToggle</button>
+
+         <hr />
+        <button class="move">animate-move</button>
+         <div class="moveTo" style="width: 200px; height: 200px; background: #aaa;padding: 15px; position: relative">
+            <p>必须把要移动的元素css position 设置.把 div元素移动到左边，直到 left 属性等于 250 像素为止</p>
+             
+         </div>
+
+         <hr />
+        <button class="multi">animate-multi</button>
+         <div class="multiCss" style="width: 200px; height: 200px; background: #aaa;padding: 15px; position: relative">
+            <p>可同时使用多个属性</p>
+             
+
+        </div>
+             
+         <hr />
+        <button class="plus">animate-plus</button>
+        <button class="minus">animate-minus</button>
+        <button class="heightToggle">height toggle</button>
+         <div class="To" style="width: 200px; height: 200px; background: #aaa;padding: 15px; position: relative">
+            <p>可+=  -=</p> 
+
+        
+        </div>
+        <hr />
+        
+        <button class="animate3">height animate3</button>
+        <button class="stop2">stop2</button>
+        <button class="stop3">stop3</button>
+        <button class="stop4">stop4</button>
+        <button class="back">get back</button>
+        <p>2 停止当前活动的动画，但允许已排队的哦动画执行， 3 已排队的也不执行， 4 立即完成当前活动的动画,清空队列，停下来</p>
+         <div class="animate3To" style="width: 200px; height: 200px; background: #aaa;padding: 15px; position: relative">
+            <p>hello</p>
+             
+
+
+
+         </div>
+
+        <hr />
+        <div class="div1">
+            <button class="hide">hide</button>
+            <p class="callback">this is on callback function</p>
+        </div>
+        <hr />
+        <div class="div2">
+            <button class="hide">hide</button>
+            <p class="callback">this is on callback function</p>
+        </div>
+
+        <hr />
+        <div class="div3">
+            <p>fun is here with chaining</p>
+            <button class="chain">chain</button>
+        </div>
+
+        <hr />
+        <div class="div4">
+            <p>this <span>????</span>is a <b>bold</b> text.</p>
+            <button class="btn1">btn1</button>
+            <button class="btn2">btn2</button>
+            
+            <label for="">name:</label>
+            <input type="text" value="fdsfdsf" />
+            <button class="btn3">show</button>
+        </div>
+        <hr />
+        <div class="div5" id="div5">
+            <p class="p1">para1</p>
+            <p class="p2">para2</p>
+            <input type="text" value="dfadsf" />
+            <button class="btn1">设置文本</button>
+            <button class="btn2">设置字体</button>
+            <button class="btn3">设置值</button>
+            <a href="http://www.baidu.com/">baidu</a>
+            <button class="btn4">change link href</button>
+            <button class="btn5"> link href title</button>
+            <button class="btn6"> link href origValue</button>
+            
+            <p class="p1">origin</p>
+            <button class="btn7">btn7</button>
+            <button class="btn8">btn8</button>
+            <button class="btn9">btn9</button>
+            <button onclick="appendText()">btn9</button>
+
+            <p class="p2"> beforeafter   </p>
+            <button class="before">before</button>
+            <button class="after">after</button>
+            <button onclick="afterText()">after2</button>
+
+            <button class="btn11">remove</button>
+            <button class="btn13">remove p</button>
+            <button class="btn12">empty</button>
+        </div>
+
+        <hr />
+        <div class="div6">
+            <h4>fsd</h4>
+            <p>dsfsdfs</p>
+            <p>dsfsdfs</p>
+            <button class="btn1">btn1add</button>
+
+            <h4 class="blue important">fsd</h4>
+            <p class="blue ">dsfsdfs</p>
+            <p>dsfsdfs</p>
+            <button class="btn2">btn2remove</button>
+            <button class="btn3">btn3toggle</button>
+        </div>
+        <hr />
+
+        <div class="div7">
+            <p class="blue">fdsfsd</p>
+            <p class="bg-yellow blue">fdsfsd</p>
+
+            <button class="btn1">btn1</button>
+            <button class="btn2">btn2</button>
+            <div id="div1" style="width: 100px; height: 300px; background: black; color: white; padding: 10px;"></div>
+            <button class="btn3">btn3 show div size</button>
+            <button class="btn4">btn4 show div size</button>
+            <button class="btn5">btn5 show div size</button>
+            <button class="btn7">btn7 show div size</button>
+            <p id="doc">sdsd</p>
+
+            <button class="btn6">btn6 show div size</button>
+            
+            <p>dfsfsd <span>fsdf</span>   </p>
+            <button class="btn7">parents</button>
+            <button class="btn8">parentUntil</button>
+            <button class="btn9">children</button>
+            <button class="btn10">find</button>
+            <button class="btn14">nextUntil</button>
+            <button class="btn13">nextAll</button>
+            <button class="btn12">next</button>
+            <button class="btn11">siblings</button>
+            <br />
+            
+        </div>
+        <hr />
+        <div class="div8">
+            
+            <button class="btn1">first</button>
+            <button class="btn2">last</button>
+            <button class="btn3">eq</button>
+            <button class="btn4">filter</button>
+            <button class="btn5">not</button>
+        </div>
+        <hr />
+        <div class="div9">
+            <p id="ajax"> ajax</p>
+            <div id="div3"></div>
+            <button class="btn1">btn1</button>
+        </div>
+
+
+
+
 
 
         <script src="jq1.js"></script>
