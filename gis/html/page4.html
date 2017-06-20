@@ -1,0 +1,155 @@
+<html>  
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+  <title>Basemap gallery</title>
+  <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css">    
+  <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
+  <style> 
+    html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
+    #map{
+      padding:0;
+    }
+  </style> 
+  
+  <script src="https://js.arcgis.com/3.20/"></script>
+  <script> 
+    
+    require(["dojo/dom",
+              "dojo/_base/array",
+              "esri/Color",
+              
+              "esri/map",
+              "esri/graphic",
+              "esri/graphicsUtils",
+              "esri/tasks/Geoprocessor",
+              "esri/tasks/FeatureSet",
+              "esri/tasks/LinearUnit",
+              "esri/symbols/SimpleMarkerSymbol",
+              "esri/symbols/SimpleLineSymbol",
+              "esri/symbols/SimpleFillSymbol"
+              ],
+        function(dom, array, Color, Map, Graphic, graphicsUtils, Geoprocessor, FeatureSet, LinearUnit, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol){
+
+          var map, gp;
+
+          /*Initialize map, GP*/
+
+            map = new Map("map", {
+              basemap: "streets",
+               center: [103.73, 36.03],
+                zoom: 11
+            });
+
+            gp = new Geoprocessor("https://sampleserver6.arcgisonline.com/ArcGIS/rest/services/Elevation/ESRI_Elevation_World/GPServer/Viewshed");
+            gp.setOutputSpatialReference({
+              wkid: 102100
+            });
+            map.on("click", computeViewShed);
+
+          function computeViewShed(evt) {
+            map.graphics.clear();
+            var pointSymbol = new SimpleMarkerSymbol();
+            pointSymbol.setSize(14);
+            pointSymbol.setOutline(new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([255, 0, 0]), 1));
+            pointSymbol.setColor(new Color([0, 255, 0, 0.25]));
+
+            var graphic = new Graphic(evt.mapPoint, pointSymbol);
+            map.graphics.add(graphic);
+
+            var features = [];
+            features.push(graphic);
+            var featureSet = new FeatureSet();
+            featureSet.features = features;
+            var vsDistance = new LinearUnit();
+            vsDistance.distance = 5;
+            vsDistance.units = "esriMiles";
+            var params = {
+              "Input_Observation_Point": featureSet,
+              "Viewshed_Distance": vsDistance
+            };
+            gp.execute(params, drawViewshed);
+          }
+
+          function drawViewshed(results, messages) {
+            var polySymbol = new SimpleFillSymbol();
+            polySymbol.setOutline(new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([0, 0, 0, 0.5]), 1));
+            polySymbol.setColor(new Color([255, 127, 0, 0.7]));
+            var features = results[0].value.features;
+            for (var f = 0, fl = features.length; f < fl; f++) {
+              var feature = features[f];
+              feature.setSymbol(polySymbol);
+              map.graphics.add(feature);
+            }
+            map.setExtent(graphicsUtils.graphicsExtent(map.graphics.graphics), true);
+          }
+    });
+
+
+  </script> 
+   <link rel="stylesheet" href="http://js.arcgis.com/3.11/esri/css/esri.css">
+   <script src="http://js.arcgis.com/3.11/"></script>
+   <script type="text/javascript" src="js/doMap.js"></script>
+
+   <!-- @比例尺 -->
+   <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/themes/calcite/dijit/calcite.css">
+   <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/themes/calcite/esri/esri.css">
+  <script src="https://js.arcgis.com/3.20/"></script>
+
+
+
+  <link rel="stylesheet" href="../css/StyleSheet.css" />
+</head> 
+
+<body class=""> 
+  <header id="header" class="bg-primary text-white ">
+    <div class="container">
+      <h1>WebGIS实现空间分析功能----以兰州地区为例</h1>
+      <p></p>
+    </div>
+  </header>
+  
+  <div id="nav">
+    <ul>
+      <li><button class="btn btn-primary" title="" onclick="toggle" id='btn1'>简单浏览 </button></li>
+      <li><button class="btn btn-primary" title="" onclick="toggle" id='btn1'>底图切换 </button></li>
+      <li><button class="btn btn-primary" title="点击按钮后，页面会显示几个按钮供浏览地图。"> 底图选择</button></li>
+      <li><button class="btn btn-white" title="点击该按钮，启动视域功能。"> 视域分析</button></li>
+      <li><button class="btn btn-primary" title="点击该按钮，启动缓冲区几何功能。"> 缓冲区</button></li>
+      
+    </ul>
+  
+
+  </div>
+
+
+  <div class="map claro" >
+
+    <div id="map"></div>
+    <div id="info" class="esriSimpleSlider">
+      请在图层中点击一处查看该点的可视区域。
+    </div>
+  </div>
+
+  
+  
+
+
+  <footer id="footer">
+    <div class="container">
+         课程作业<br />
+          &copyright; 许义方， 2014级
+          地理信息科学
+    </div>
+  </footer>
+
+
+  <!-- jq -->
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <!-- bootstrap -->
+  <link href="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</body> 
+
+</html>

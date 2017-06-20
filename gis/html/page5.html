@@ -1,0 +1,238 @@
+<html>  
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+  <title>Basemap gallery</title>
+  <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css">    
+  <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
+  <style> 
+    html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
+    #map{
+      padding:0;
+    }
+  </style> 
+  
+  <script src="https://js.arcgis.com/3.20/"></script>
+  <script> 
+    
+    var map, tb;
+
+    require(["dojo/dom",
+
+            "dojo/_base/array",
+            "dojo/parser",
+            "dojo/query",
+            "dojo/on",
+
+            "esri/Color",
+            "esri/config",
+            "esri/map",
+            "esri/graphic",
+
+            "esri/geometry/normalizeUtils",
+            "esri/tasks/GeometryService",
+            "esri/tasks/BufferParameters",
+      
+            "esri/toolbars/draw",
+      
+            "esri/symbols/SimpleMarkerSymbol",
+            "esri/symbols/SimpleLineSymbol",
+            "esri/symbols/SimpleFillSymbol",
+            
+            "dijit/layout/BorderContainer",
+            "dijit/layout/ContentPane",
+            "dijit/form/Button", "dojo/domReady!"
+            ],
+          function(dom, array, parser, query, on, Color, esriConfig, Map, Graphic, normalizeUtils, GeometryService, BufferParameters, Draw, SimpleMarkerSymbol, SimpleLineSymbol, SimpleFillSymbol){
+
+            parser.parse();
+
+
+            esriConfig.defaults.geometryService = new GeometryService("https://utility.arcgisonline.com/ArcGIS/rest/services/Geometry/GeometryServer");
+
+            esriConfig.defaults.io.proxyUrl = "/proxy/";
+            esriConfig.defaults.io.alwaysUseProxy = false;
+
+
+           //Setup button click handlers
+            on(dom.byId("clearGraphics"), "click", function(){
+              if(map){
+                map.graphics.clear();
+              }
+            });
+            //click handler for the draw tool buttons
+            query(".tool").on("click", function(evt){
+              if(tb){
+               tb.activate(evt.target.id);
+              }
+            });
+
+            map = new Map("map", {
+              basemap: "streets",
+               center: [103.73, 36.03],
+                zoom: 11
+            });
+            map.on("load", initToolbar);
+
+
+
+          function initToolbar(evtObj) {
+            tb = new Draw(evtObj.map);
+            tb.on("draw-end", doBuffer);
+          }
+
+          function doBuffer(evtObj) {
+            tb.deactivate();
+            var geometry = evtObj.geometry, symbol;
+            switch (geometry.type) {
+               case "point":
+                 symbol = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_SQUARE, 10, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([255,0,0]), 1), new Color([0,255,0,0.25]));
+                 break;
+               case "polyline":
+                 symbol = new SimpleLineSymbol(SimpleLineSymbol.STYLE_DASH, new Color([255,0,0]), 1);
+                 break;
+               case "polygon":
+                 symbol = new SimpleFillSymbol(SimpleFillSymbol.STYLE_NONE, new SimpleLineSymbol(SimpleLineSymbol.STYLE_DASHDOT, new Color([255,0,0]), 2), new Color([255,255,0,0.25]));
+                 break;
+            }
+
+              var graphic = new Graphic(geometry, symbol);
+              map.graphics.add(graphic);
+
+              //setup the buffer parameters
+              var params = new BufferParameters();
+              params.distances = [ dom.byId("distance").value ];
+              params.outSpatialReference = map.spatialReference;
+              params.unit = GeometryService[dom.byId("unit").value];
+              //normalize the geometry 
+
+              normalizeUtils.normalizeCentralMeridian([geometry]).then(function(normalizedGeometries){
+                var normalizedGeometry = normalizedGeometries[0];
+                if (normalizedGeometry.type === "polygon") {
+                  //if geometry is a polygon then simplify polygon.  This will make the user drawn polygon topologically correct.
+                  esriConfig.defaults.geometryService.simplify([normalizedGeometry], function(geometries) {
+                    params.geometries = geometries;
+                    esriConfig.defaults.geometryService.buffer(params, showBuffer);
+                  });
+                } else {
+                  params.geometries = [normalizedGeometry];
+                  esriConfig.defaults.geometryService.buffer(params, showBuffer);
+                }
+
+              });
+            }
+
+            function showBuffer(bufferedGeometries) {
+              var symbol = new SimpleFillSymbol(
+                SimpleFillSymbol.STYLE_SOLID,
+                new SimpleLineSymbol(
+                  SimpleLineSymbol.STYLE_SOLID,
+                  new Color([255,0,0,0.65]), 2
+                ),
+                new Color([255,0,0,0.35])
+              );
+
+              array.forEach(bufferedGeometries, function(geometry) {
+                var graphic = new Graphic(geometry, symbol);
+                map.graphics.add(graphic);
+              });
+
+            }
+      });
+
+
+  </script> 
+   <link rel="stylesheet" href="http://js.arcgis.com/3.11/esri/css/esri.css">
+   <script src="http://js.arcgis.com/3.11/"></script>
+   <script type="text/javascript" src="js/doMap.js"></script>
+
+   <!-- @比例尺 -->
+   <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/themes/calcite/dijit/calcite.css">
+   <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/themes/calcite/esri/esri.css">
+  <script src="https://js.arcgis.com/3.20/"></script>
+
+
+
+  <link rel="stylesheet" href="../css/StyleSheet.css" />
+</head> 
+
+<body class=""> 
+  <header id="header" class="bg-primary text-white ">
+    <div class="container">
+      <h1>WebGIS实现空间分析功能----以兰州地区为例</h1>
+      <p></p>
+    </div>
+  </header>
+  
+  <div id="nav">
+    <ul>
+      <li><button class="btn btn-primary" title="" onclick="toggle" id='btn1'>简单浏览 </button></li>
+      <li><button class="btn btn-primary" title="" onclick="toggle" id='btn1'>底图切换 </button></li>
+      <li><button class="btn btn-primary" title="点击按钮后，页面会显示几个按钮供浏览地图。"> 底图选择</button></li>
+      <li><button class="btn btn-primary" title="点击该按钮，启动视域功能。"> 视域分析</button></li>
+      <li><button class="btn btn-white" title="点击该按钮，启动缓冲区几何功能。"> 缓冲区</button></li>
+      
+    </ul>
+  
+
+  </div>
+
+
+
+  <div class="map claro" >
+    <div data-dojo-type="dijit/layout/BorderContainer" 
+         data-dojo-props="gutters:'true', design:'sidebar'" 
+         style="width:100%;height:100%;">
+
+      <div id="map" 
+           data-dojo-type="dijit/layout/ContentPane" 
+           data-dojo-props="region:'center'">
+      </div>
+
+      <div id="leftPane" 
+           data-dojo-type="dijit/layout/ContentPane" 
+           data-dojo-props="region:'left'">
+        <div class="details">请选择要在右边图层操作的缓冲区类型。</div>
+        <button type="button" class="tool" id="line">线性</button>
+        <button type="button" class="tool" id="polyline">多线</button>
+        <button type="button" class="tool" id="freehandpolyline">手绘线段</button>
+        <br/>
+        <button type="button" class="tool" id="polygon">多边形</button>
+        <button type="button" class="tool" id="freehandpolygon">手绘多边形</button><br /><br />
+        <br/><hr />
+        <div><b>缓冲参数</b></div>
+        Distance:&nbsp;<input type="text" id="distance" size="5" value="25" />
+        <select id="unit" style="width:100px;">
+          <option value="UNIT_STATUTE_MILE">英里</option>
+          <option value="UNIT_FOOT">步</option>
+          <option value="UNIT_KILOMETER">公里</option>
+          <option value="UNIT_METER">米</option>
+          <option value="UNIT_NAUTICAL_MILE">海米</option>
+        </select><br />
+        <button type="button" id="clearGraphics">清空</button>
+      </div>
+    </div>
+  </div>
+
+  
+  
+
+
+  <footer id="footer">
+    <div class="container">
+         课程作业<br />
+          &copyright; 许义方， 2014级
+          地理信息科学
+    </div>
+  </footer>
+
+
+  <!-- jq -->
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <!-- bootstrap -->
+  <link href="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</body> 
+
+</html>

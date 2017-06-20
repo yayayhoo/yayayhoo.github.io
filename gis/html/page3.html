@@ -1,0 +1,125 @@
+<html>  
+<head> 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1,user-scalable=no"/>
+  <title>Basemap gallery</title>
+  <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css">    
+  <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
+  <style> 
+    html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
+    #map{
+      padding:0;
+    }
+  </style> 
+  
+  <script src="https://js.arcgis.com/3.20/"></script>
+  <script> 
+    var map;
+    require([
+      "esri/map", "esri/dijit/BasemapGallery", "esri/arcgis/utils",
+      "dojo/parser",
+
+      "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dijit/TitlePane",
+      "dojo/domReady!"
+    ], function(
+      Map, BasemapGallery, arcgisUtils,
+      parser
+    ) {
+      parser.parse();
+
+      map = new Map("map", {
+        basemap: "topo",
+         center: [103.73, 36.03],
+            zoom: 11
+        
+      });
+
+      //add the basemap gallery, in this case we'll display maps from ArcGIS.com including bing maps
+      var basemapGallery = new BasemapGallery({
+        showArcGISBasemaps: true,
+        map: map
+      }, "basemapGallery");
+      basemapGallery.startup();
+      
+      basemapGallery.on("error", function(msg) {
+        console.log("basemap gallery error:  ", msg);
+      });
+    });
+  </script> 
+   <link rel="stylesheet" href="http://js.arcgis.com/3.11/esri/css/esri.css">
+   <script src="http://js.arcgis.com/3.11/"></script>
+   <script type="text/javascript" src="js/doMap.js"></script>
+
+   <!-- @比例尺 -->
+   <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/themes/calcite/dijit/calcite.css">
+   <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/themes/calcite/esri/esri.css">
+  <script src="https://js.arcgis.com/3.20/"></script>
+
+
+
+  <link rel="stylesheet" href="../css/StyleSheet.css" />
+</head> 
+
+<body class=""> 
+  <header id="header" class="bg-primary text-white ">
+    <div class="container">
+      <h1>WebGIS实现空间分析功能----以兰州地区为例</h1>
+      <p></p>
+    </div>
+  </header>
+  
+  <div id="nav">
+    <ul>
+      <li><button class="btn btn-primary" title="" onclick="toggle" id='btn1'>简单浏览 </button></li>
+      <li><button class="btn btn-primary" title="" onclick="toggle" id='btn1'>底图切换 </button></li>
+      <li><button class="btn btn-white" title="点击按钮后，页面会显示几个按钮供浏览地图。"> 底图选择</button></li>
+      <li><button class="btn btn-primary" title="点击该按钮，启动视域功能。"> 视域分析</button></li>
+      <li><button class="btn btn-primary" title="点击该按钮，启动缓冲区几何功能。"> 缓冲区</button></li>
+      
+    </ul>
+  
+
+  </div>
+
+
+  <div class="map claro" >
+
+    <div id="map" 
+        >
+
+      <!-- 下拉的位置 -->
+      <div style="position:absolute; right:20px; top:70px; z-Index:999;">
+      <!-- 下拉内容 -->
+        <div data-dojo-type="dijit/TitlePane" 
+             data-dojo-props="title:'底图选择', closable:false, open:false">
+          <div data-dojo-type="dijit/layout/ContentPane" style="width:180px; height:280px; overflow:auto;">
+            <div id="basemapGallery"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  
+
+
+  <footer id="footer">
+    <div class="container">
+         课程作业<br />
+          &copyright; 许义方， 2014级
+          地理信息科学
+    </div>
+  </footer>
+
+
+  <!-- jq -->
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <!-- bootstrap -->
+  <link href="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</body> 
+
+</html>

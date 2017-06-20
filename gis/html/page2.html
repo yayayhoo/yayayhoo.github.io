@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>  
+<head> 
+  
+  <title>WEBGIS 作业</title>
+   <link type ="text/css" rel ="Stylesheet" href="../css/StyleSheet.css" >
+  <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css">    
+  <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
+  <style> 
+    html, body { height: 100%; width: 100%; margin: 0; padding: 0; }
+    #map{
+      padding:0;
+    }
+        #HomeButton {
+      position: absolute;
+      top: 130px;
+      left: 115px;
+      z-index: 50;
+    }
+
+  </style> 
+  
+  <script src="https://js.arcgis.com/3.20/"></script>
+  <script>
+
+
+   
+
+
+   
+     
+      var map;
+
+      require([
+      "esri/map", "esri/dijit/BasemapGallery", "esri/dijit/BasemapToggle", "esri/arcgis/utils",
+      "dojo/parser",
+
+      "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dijit/TitlePane",
+      "dojo/domReady!"
+    ], function (
+      Map, Basemaptoggle,BasemapGallery, arcgisUtils, 
+      parser
+    ) {
+        parser.parse();
+
+        map = new Map("mapToggle", {
+            basemap: "topo",
+            center: [103.73, 36.03],
+                       zoom: 11
+        });
+
+        var basemapGallery = new BasemapGallery({
+            showArcGISBasemaps: true,
+            map: map
+        }, "basemapGallery");
+        basemapGallery.startup();
+        basemapGallery.on("error", function (msg) {
+            console.log("basemap gallery error:  ", msg);
+        });    
+            var toggle = new BasemapToggle({
+            map: map,
+            basemap: "satellite"
+        }, "BasemapToggle");
+        toggle.startup();
+
+    
+        
+     });
+    
+
+
+      
+  </script> 
+
+  <link rel="stylesheet" href="http://js.arcgis.com/3.11/esri/css/esri.css">
+  <script src="http://js.arcgis.com/3.11/"></script>
+  <script type="text/javascript" src="js/doMap.js"></script>
+
+  <!-- @比例尺 -->
+  <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/themes/calcite/dijit/calcite.css">
+  <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/themes/calcite/esri/esri.css">
+ <script src="https://js.arcgis.com/3.20/"></script>
+
+
+
+</head> 
+
+<body  class="calcite">
+  <header id="header" class="bg-primary text-white ">
+    <div class="container">
+      <h1>WebGIS实现空间分析功能----以兰州地区为例</h1>
+      <p></p>
+    </div>
+  </header>
+
+
+  <div id="nav">
+    <ul>
+     <li><button class="btn btn-primary" title="" onclick="toggle" id='btn1'>简单浏览 </button></li>
+      <li><button class="btn btn-white" title="" onclick="toggle" id='btn1'>底图切换 </button></li>
+      <li><button class="btn btn-primary" title="点击按钮后，页面会显示几个按钮供浏览地图。"> 底图选择</button></li>
+      <li><button class="btn btn-primary" title="点击该按钮，启动视域功能。"> 视域分析</button></li>
+      <li><button class="btn btn-primary" title="点击该按钮，启动缓冲区几何功能。"> 缓冲区</button></li>
+      
+    </ul>
+  
+
+  </div>
+
+  <article>
+   
+    <!-- 切换地形图，影像图 -->
+    <div class="mapToggle">
+      
+      <div id="mapToggle"></div>
+      <div id="basemapGallery" title="点击该处，实现影像图和地形图的切换。"></div>
+      <div id="BasemapToggle"></div>
+      <br />
+
+    </div>
+
+<!-- 地图漫游按钮组 btn-gr -->
+    <!--   <div id="btn-gr esri">
+          <div>
+              <table style="width: 100%;">
+                  <tr>
+                      <td>
+                          <input class="btn btn-primary" type="button" value="放大" />
+                          <input class="btn btn-primary" type="button" value="缩小" />
+                          <input class="btn btn-primary" type="button" value="上移" />
+                          <input class="btn btn-primary" type="button" value="下移" />
+                          <input class="btn btn-primary" type="button" value="左移" />
+                          <input class="btn btn-primary" type="button" value="右移" />
+                          <input class="btn btn-primary" type="button" value="全屏" />
+                          <input class="btn btn-primary" type="button" value="拖动" />
+                          <input class="btn btn-primary" type="button" value="鹰眼" />
+                      </td>
+                      <td> </td>
+                      <td> </td>
+                  </tr>
+              </table>
+          </div>
+          <div id="DivBottom"></div>
+
+      </div> -->
+
+      <br />
+    <br />
+    <br />
+    <br />
+ 
+  </article>
+  
+
+
+  <footer id="footer">
+    <div class="container">
+         课程作业<br />
+          &copyright; 许义方， 2014级
+          地理信息科学
+    </div>
+  </footer>
+
+
+
+  <!-- jq -->
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <!-- bootstrap -->
+  <link href="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+</body>
+</html>

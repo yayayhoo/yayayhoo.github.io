@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link type ="text/css" rel ="Stylesheet" href ="css/StyleSheet.css" />
+ <link rel="stylesheet" href="https://js.arcgis.com/3.20/esri/css/esri.css">
+ <link rel="stylesheet" href="https://js.arcgis.com/3.20/dijit/themes/claro/claro.css"> 
+ <script src="https://js.arcgis.com/3.20/"></script>
+
+<script>
+    var map;
+
+    require(["esri/map", "esri/dijit/BasemapGallery", "esri/arcgis/utils",
+      "dojo/parser", "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dijit/TitlePane",
+ "dojo/domReady!"], 
+ function (Map,BasemapGallery, arcgisUtils,
+      parser) {
+        map = new Map("map", {
+            basemap: "topo",  //For full list of pre-defined basemaps, navigate to http://arcg.is/1JVo6Wd
+            center: [-122.45, 37.75], // longitude, latitude
+            zoom: 13
+        });
+        var basemapGallery = new BasemapGallery({
+        showArcGISBasemaps: true,
+        map: map
+      }, "basemapGallery");
+      basemapGallery.startup();
+      
+      basemapGallery.on("error", function(msg) {
+        console.log("basemap gallery error:  ", msg);
+      });
+    });
+    </script>
+
+    <title></title>
+    <style>
+    #header {
+        background-color:black;
+        color:white;
+        text-align:center;
+        padding:5px;
+    }
+    #nav {
+        line-height:30px;
+        background-color:#eeeeee;
+        height:300px;
+        width:100px;
+        float:left;
+        padding:5px; 
+    }
+    #map 
+    {
+        height:790px;
+        width:1000px;
+        float:left;
+        padding:10px; 
+    }
+    #footer {
+        background-color:black;
+        color:white;
+        clear:both;
+        text-align:center;
+        padding:5px; 
+    }
+    /*.esriBasemapGalleryNode {
+        float: left;
+        display: inline-block;
+    }*/
+    </style>
+
+
+</head>
+<body>
+<div id="header">
+<h1>City Gallery</h1>
+</div>
+
+
+<div id="nav">
+London<br>
+Paris<br>
+Tokyo<br>
+</div>
+
+<div id="map">
+<div id="basemapGallery"></div>
+
+</div>
+
+<div id="footer">
+Copyright W3School.com.cn
+</div>
+</body>
+
+</html>
